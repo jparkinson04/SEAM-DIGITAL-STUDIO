@@ -280,66 +280,188 @@ section { padding: 120px 0; }
 }
 
 /* ==========================================================================
-   SERVICES
+   SERVICES (tiers + content card)
    ========================================================================== */
 .services { background: var(--cream); }
-.services-grid {
+
+.tier-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.tier {
+  background: var(--cream);
+  border: 1.5px solid var(--ink);
+  padding: 56px 44px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.tier--featured {
+  background: var(--ink);
+  color: var(--cream);
+  border-width: 2.5px;
+}
+
+.tier-badge {
+  position: absolute;
+  top: -13px;
+  left: 32px;
+  background: var(--cream);
+  color: var(--ink);
+  padding: 6px 14px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.28em;
+  border: 1.5px solid var(--ink);
+}
+
+.tier-eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.28em;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.tier--featured .tier-eyebrow { color: var(--muted-2); }
+
+.tier-name {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.tier-note {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-bottom: 28px;
+  min-height: 18px;
+}
+.tier--featured .tier-note { color: var(--muted-2); }
+
+.tier-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+.tier--featured .tier-desc { color: var(--muted-2); }
+
+.tier-rule {
+  height: 1.5px;
+  background: var(--ink);
+  margin-bottom: 28px;
+}
+.tier--featured .tier-rule { background: var(--cream); opacity: 0.2; }
+
+.tier-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 40px;
+  flex: 1;
+}
+.tier-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.tier-tick {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  background: var(--ink);
+  color: var(--cream);
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 900;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.tier--featured .tier-tick { background: var(--cream); color: var(--ink); }
+
+.tier-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 18px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.26em;
+  background: var(--ink);
+  color: var(--cream);
+  transition: opacity 0.2s;
+  margin-top: auto;
+}
+.tier--featured .tier-btn { background: var(--cream); color: var(--ink); }
+.tier-btn:hover { opacity: 0.85; }
+
+/* Content full-width card */
+.content-card {
+  border: 1.5px solid var(--ink);
+  background: var(--cream-2);
+  padding: 56px 48px;
+}
+.content-card-head { max-width: 760px; margin-bottom: 56px; }
+.content-card-eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.28em;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.content-card-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+.content-card-desc {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+.content-tiles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 0;
   border-top: 1px solid var(--ink);
   border-left: 1px solid var(--ink);
+  margin-bottom: 48px;
 }
-.service-card {
-  padding: 56px 40px;
-  background: var(--cream);
+.content-tile {
+  padding: 36px 28px;
   border-right: 1px solid var(--ink);
   border-bottom: 1px solid var(--ink);
-  transition: background 0.3s;
-  position: relative;
+  background: var(--cream-2);
 }
-.service-card:hover { background: var(--cream-2); }
-.service-num {
-  font-size: 11px;
+.content-tile-title {
+  font-size: 12px;
   font-weight: 800;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.2em;
+  margin-bottom: 12px;
+}
+.content-tile-body {
+  font-size: 14px;
+  line-height: 1.6;
   color: var(--muted);
-  margin-bottom: 32px;
 }
-.service-icon {
-  width: 56px;
-  height: 56px;
-  border: 1.5px solid var(--ink);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 28px;
-  font-size: 24px;
-}
-.service-title {
-  font-size: 22px;
-  font-weight: 900;
-  letter-spacing: 0.02em;
-  margin-bottom: 16px;
-  line-height: 1.2;
-}
-.service-body {
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--muted);
-  margin-bottom: 32px;
-}
-.service-link {
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.24em;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding-bottom: 4px;
-  border-bottom: 1.5px solid var(--ink);
-}
+.content-card-cta { display: flex; justify-content: flex-start; }
+.content-card-cta .tier-btn { width: auto; padding: 18px 36px; }
 
 /* ==========================================================================
    HOW IT WORKS
@@ -385,130 +507,6 @@ section { padding: 120px 0; }
   line-height: 1.7;
   color: var(--muted-2);
 }
-
-/* ==========================================================================
-   INCLUDED
-   ========================================================================== */
-.included { background: var(--cream-2); }
-.included-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 60px 80px;
-}
-.included-item {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  padding-bottom: 32px;
-  border-bottom: 1px solid rgba(14, 14, 14, 0.15);
-}
-.included-check {
-  width: 32px;
-  height: 32px;
-  background: var(--ink);
-  color: var(--cream);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: 900;
-  flex-shrink: 0;
-}
-.included-content h4 {
-  font-size: 16px;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  margin-bottom: 6px;
-}
-.included-content p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--muted);
-}
-
-/* ==========================================================================
-   PRICING
-   ========================================================================== */
-.pricing { background: var(--cream); }
-.pricing-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-.price-card {
-  border: 1.5px solid var(--ink);
-  padding: 56px 48px;
-  background: var(--cream);
-  position: relative;
-}
-.price-card.dark {
-  background: var(--ink);
-  color: var(--cream);
-}
-.price-tag {
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 80px;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  margin-bottom: 4px;
-}
-.price-period {
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 12px;
-}
-.price-card.dark .price-period { color: var(--muted-2); }
-.price-name {
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.28em;
-  color: var(--muted);
-  margin-bottom: 32px;
-}
-.price-card.dark .price-name { color: var(--muted-2); }
-.price-rule {
-  height: 1.5px;
-  background: var(--ink);
-  margin-bottom: 28px;
-}
-.price-card.dark .price-rule { background: var(--cream); opacity: 0.2; }
-.price-features {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-bottom: 40px;
-}
-.price-features li {
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  line-height: 1.5;
-}
-.price-features li::before {
-  content: '';
-  width: 8px;
-  height: 8px;
-  background: currentColor;
-  flex-shrink: 0;
-}
-.price-btn {
-  width: 100%;
-  padding: 18px;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.26em;
-  background: var(--ink);
-  color: var(--cream);
-  transition: opacity 0.2s;
-  cursor: pointer;
-}
-.price-card.dark .price-btn {
-  background: var(--cream);
-  color: var(--ink);
-}
-.price-btn:hover { opacity: 0.85; }
 
 /* ==========================================================================
    TESTIMONIAL
@@ -858,9 +856,18 @@ section { padding: 120px 0; }
   .logo.size-lg .tick   { height: 16px; }
   .logo.size-lg .dash   { width: 12px; }
   .logo.size-lg .studio { font-size: 18px; }
-  .services-grid, .how-grid, .pricing-grid, .included-grid, .pillars-grid, .footer-top { grid-template-columns: 1fr; }
+  .tier-grid, .how-grid, .pillars-grid, .footer-top { grid-template-columns: 1fr; }
+  .content-tiles { grid-template-columns: repeat(2, 1fr); }
+  .content-card { padding: 36px 28px; }
+  .content-card-title { font-size: 28px; }
+  .tier { padding: 40px 28px; }
+  .tier-name { font-size: 28px; }
   .about-pullquote { font-size: 24px; margin: 48px 0 60px; }
   .about-body p { font-size: 16px; }
+}
+
+@media (max-width: 560px) {
+  .content-tiles { grid-template-columns: 1fr; }
   .quote { font-size: 24px; }
   .cta-inner { flex-direction: column; align-items: flex-start; gap: 32px; }
   .cta-text { font-size: 36px; }
@@ -899,7 +906,6 @@ section { padding: 120px 0; }
     <a href="#services">SERVICES</a>
     <a href="#about">ABOUT</a>
     <a href="#how">HOW IT WORKS</a>
-    <a href="#pricing">PRICING</a>
     <a href="#faq">FAQ</a>
     <a href="#contact" class="nav-cta">BOOK A CALL</a>
   </div>
@@ -945,6 +951,84 @@ section { padding: 120px 0; }
       <span class="ticker-item"><span class="ticker-dot"></span>ONGOING SUPPORT</span>
     </div>
   </div>
+
+  <!-- ============================== SERVICES (tiers) ============================== -->
+  <section class="services" id="services" aria-labelledby="services-title">
+    <div class="container animate-on-scroll">
+      <p class="section-label">WHAT I OFFER</p>
+      <h2 id="services-title" class="section-headline">Everything your business needs online, <em>all in one place.</em></h2>
+    </div>
+
+    <div class="container animate-on-scroll" style="padding: 0;">
+      <div class="tier-grid">
+        <!-- Full Setup (featured) -->
+        <article class="tier tier--featured">
+          <span class="tier-badge">MOST POPULAR</span>
+          <p class="tier-eyebrow">THE FULL SETUP</p>
+          <h3 class="tier-name">The Full Setup</h3>
+          <p class="tier-note">50% upfront · 50% on completion</p>
+          <p class="tier-desc">A complete digital foundation for your business — built around your brand, your story, and your customers.</p>
+          <div class="tier-rule"></div>
+          <ul class="tier-list">
+            <li><span class="tier-tick" aria-hidden="true">✓</span><span>Custom design and build (up to 5 pages)</span></li>
+            <li><span class="tier-tick" aria-hidden="true">✓</span><span>Booking system integration (Ticket Tailor, Fresha, and others)</span></li>
+            <li><span class="tier-tick" aria-hidden="true">✓</span><span>Social media links and cross-linking</span></li>
+            <li><span class="tier-tick" aria-hidden="true">✓</span><span>Google reviews section</span></li>
+            <li><span class="tier-tick" aria-hidden="true">✓</span><span>15 content posts — starter pack included</span></li>
+            <li><span class="tier-tick" aria-hidden="true">✓</span><span>On-brand copywriting throughout</span></li>
+            <li><span class="tier-tick" aria-hidden="true">✓</span><span>Mobile optimised</span></li>
+          </ul>
+          <a href="#contact" class="tier-btn">ENQUIRE FOR A QUOTE <span aria-hidden="true">→</span></a>
+        </article>
+
+        <!-- Monthly Care -->
+        <article class="tier">
+          <p class="tier-eyebrow">MONTHLY CARE</p>
+          <h3 class="tier-name">Monthly Care</h3>
+          <p class="tier-note">&nbsp;</p>
+          <p class="tier-desc">Your website, looked after. I handle the updates so you never have to think about it.</p>
+          <div class="tier-rule"></div>
+          <ul class="tier-list">
+            <li><span class="tier-tick" aria-hidden="true">✓</span><span>Text, image and layout updates</span></li>
+            <li><span class="tier-tick" aria-hidden="true">✓</span><span>New sections or pages added</span></li>
+            <li><span class="tier-tick" aria-hidden="true">✓</span><span>Technical maintenance</span></li>
+            <li><span class="tier-tick" aria-hidden="true">✓</span><span>One point of contact — no faff</span></li>
+          </ul>
+          <a href="#contact" class="tier-btn">ENQUIRE FOR A QUOTE <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+
+      <!-- Content full-width card -->
+      <article class="content-card">
+        <div class="content-card-head">
+          <p class="content-card-eyebrow">CONTENT</p>
+          <h3 class="content-card-title">Content that works as hard as you do</h3>
+          <p class="content-card-desc">Every business needs content — but not the same content. Whether you're trying to fill a booking calendar, build a community, or move into the corporate world, the content I create is built around your goals, your platform, and your audience.</p>
+        </div>
+        <div class="content-tiles">
+          <div class="content-tile">
+            <h4 class="content-tile-title">PURPOSE-LED</h4>
+            <p class="content-tile-body">Built around what your content needs to do — not just what looks nice.</p>
+          </div>
+          <div class="content-tile">
+            <h4 class="content-tile-title">PLATFORM-RIGHT</h4>
+            <p class="content-tile-body">Instagram, LinkedIn, or both — structured for where your audience actually is.</p>
+          </div>
+          <div class="content-tile">
+            <h4 class="content-tile-title">PROPERLY WRITTEN</h4>
+            <p class="content-tile-body">Captions, visuals, and scheduling — all handled.</p>
+          </div>
+          <div class="content-tile">
+            <h4 class="content-tile-title">TAILORED TO YOU</h4>
+            <p class="content-tile-body">Your tone, your story, your clients. Never generic.</p>
+          </div>
+        </div>
+        <div class="content-card-cta">
+          <a href="#contact" class="tier-btn">ENQUIRE ABOUT CONTENT <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </div>
+  </section>
 
   <!-- ============================== ABOUT ============================== -->
   <section class="about" id="about" aria-labelledby="about-title">
@@ -997,40 +1081,6 @@ section { padding: 120px 0; }
     </div>
   </section>
 
-  <!-- ============================== SERVICES ============================== -->
-  <section class="services" id="services" aria-labelledby="services-title">
-    <div class="container animate-on-scroll">
-      <p class="section-label">WHAT WE DO</p>
-      <h2 id="services-title" class="section-headline">A complete digital setup, <em>stitched together</em> for the way your business actually runs.</h2>
-      <p class="section-intro">Most salon owners don't need another tool. They need everything they already have to actually work together. That's what we build.</p>
-    </div>
-    <div class="container animate-on-scroll" style="padding: 0;">
-      <div class="services-grid">
-        <article class="service-card">
-          <p class="service-num">01</p>
-          <div class="service-icon" aria-hidden="true">◐</div>
-          <h3 class="service-title">WEBSITE &amp; BOOKINGS</h3>
-          <p class="service-body">A custom site designed around your brand, with your booking system fully wired in. Clients book directly. You spend less time on admin.</p>
-          <a href="#pricing" class="service-link">LEARN MORE <span aria-hidden="true">→</span></a>
-        </article>
-        <article class="service-card">
-          <p class="service-num">02</p>
-          <div class="service-icon" aria-hidden="true">★</div>
-          <h3 class="service-title">REVIEWS SYSTEM</h3>
-          <p class="service-body">An automated system that quietly collects five-star Google reviews in the background, without you having to chase clients yourself.</p>
-          <a href="#pricing" class="service-link">LEARN MORE <span aria-hidden="true">→</span></a>
-        </article>
-        <article class="service-card">
-          <p class="service-num">03</p>
-          <div class="service-icon" aria-hidden="true">▣</div>
-          <h3 class="service-title">CONTENT &amp; SOCIAL</h3>
-          <p class="service-body">Fifteen branded posts to launch with, plus a live Instagram feed pulling straight to your website. Your social presence and your site, finally connected.</p>
-          <a href="#pricing" class="service-link">LEARN MORE <span aria-hidden="true">→</span></a>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <!-- ============================== HOW IT WORKS ============================== -->
   <section class="how" id="how" aria-labelledby="how-title">
     <div class="container animate-on-scroll">
@@ -1069,100 +1119,6 @@ section { padding: 120px 0; }
           </div>
         </li>
       </ol>
-    </div>
-  </section>
-
-  <!-- ============================== INCLUDED ============================== -->
-  <section class="included" aria-labelledby="included-title">
-    <div class="container animate-on-scroll">
-      <p class="section-label">WHAT'S INCLUDED</p>
-      <h2 id="included-title" class="section-headline">Everything you need, <em>nothing you don't.</em></h2>
-      <p class="section-intro">One setup fee, one monthly retainer. No hidden costs, no surprise add-ons.</p>
-      <div class="included-grid">
-        <div class="included-item">
-          <div class="included-check" aria-hidden="true">✓</div>
-          <div class="included-content">
-            <h4>Custom website design</h4>
-            <p>Built around your brand identity, fully responsive, and optimised for converting browsers into bookings.</p>
-          </div>
-        </div>
-        <div class="included-item">
-          <div class="included-check" aria-hidden="true">✓</div>
-          <div class="included-content">
-            <h4>Booking system integration</h4>
-            <p>We wire in whatever booking tool you already use — Ticket Tailor, Fresha, Treatwell, or anything else.</p>
-          </div>
-        </div>
-        <div class="included-item">
-          <div class="included-check" aria-hidden="true">✓</div>
-          <div class="included-content">
-            <h4>Google Reviews automation</h4>
-            <p>A quiet, automated system that asks happy clients for reviews after their appointment.</p>
-          </div>
-        </div>
-        <div class="included-item">
-          <div class="included-check" aria-hidden="true">✓</div>
-          <div class="included-content">
-            <h4>Live Instagram feed</h4>
-            <p>Your latest posts appear on your site automatically. Update one place, update everywhere.</p>
-          </div>
-        </div>
-        <div class="included-item">
-          <div class="included-check" aria-hidden="true">✓</div>
-          <div class="included-content">
-            <h4>15-post content pack</h4>
-            <p>Branded launch content in your voice — ready to schedule, post, and reuse.</p>
-          </div>
-        </div>
-        <div class="included-item">
-          <div class="included-check" aria-hidden="true">✓</div>
-          <div class="included-content">
-            <h4>Ongoing support</h4>
-            <p>WhatsApp access, monthly performance reviews, and someone in your corner. Always.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================== PRICING ============================== -->
-  <section class="pricing" id="pricing" aria-labelledby="pricing-title">
-    <div class="container animate-on-scroll">
-      <p class="section-label">PRICING</p>
-      <h2 id="pricing-title" class="section-headline">Simple. <em>Transparent.</em> Built to scale with you.</h2>
-      <p class="section-intro">One setup fee gets you live. The retainer keeps you running, growing, and ahead of where you were.</p>
-      <div class="pricing-grid">
-        <article class="price-card">
-          <p class="price-name">SETUP</p>
-          <div class="price-tag">£950</div>
-          <p class="price-period">one-time payment</p>
-          <div class="price-rule"></div>
-          <ul class="price-features">
-            <li>Custom website design &amp; build</li>
-            <li>Booking system integration</li>
-            <li>Google Reviews system setup</li>
-            <li>Live Instagram feed</li>
-            <li>15-post content pack</li>
-            <li>Two-week delivery</li>
-          </ul>
-          <a href="#contact" class="price-btn" role="button">GET STARTED</a>
-        </article>
-        <article class="price-card dark">
-          <p class="price-name">RETAINER</p>
-          <div class="price-tag">£300</div>
-          <p class="price-period">per month</p>
-          <div class="price-rule"></div>
-          <ul class="price-features">
-            <li>Site maintenance &amp; updates</li>
-            <li>Monthly content support</li>
-            <li>Review monitoring &amp; response</li>
-            <li>WhatsApp support</li>
-            <li>Monthly performance review</li>
-            <li>No long-term contract</li>
-          </ul>
-          <a href="#contact" class="price-btn" role="button">BOOK A CALL</a>
-        </article>
-      </div>
     </div>
   </section>
 
@@ -1254,18 +1210,18 @@ section { padding: 120px 0; }
         <h5>NAVIGATE</h5>
         <ul>
           <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
           <li><a href="#how">How it works</a></li>
-          <li><a href="#pricing">Pricing</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h5>SERVICES</h5>
         <ul>
-          <li><a href="#services">Website &amp; bookings</a></li>
-          <li><a href="#services">Reviews system</a></li>
-          <li><a href="#services">Content &amp; social</a></li>
-          <li><a href="#pricing">Ongoing retainer</a></li>
+          <li><a href="#services">The Full Setup</a></li>
+          <li><a href="#services">Monthly Care</a></li>
+          <li><a href="#services">Content</a></li>
+          <li><a href="#contact">Enquire</a></li>
         </ul>
       </div>
       <div class="footer-col">
