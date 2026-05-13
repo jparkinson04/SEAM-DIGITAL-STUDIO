@@ -3,23 +3,23 @@ import RevealOnScroll from './RevealOnScroll';
 const STEPS = [
   {
     num: '01',
-    title: 'DISCOVERY CALL',
-    body: 'A 30-minute call to understand your business, your clients, and what you actually need online. No sales pressure, no jargon.',
+    title: 'DISCOVERY',
+    body: 'A 30-minute call to understand your business, your customers and what you actually need online.',
   },
   {
     num: '02',
-    title: 'WE BUILD IT',
-    body: 'Your full digital setup designed and built within two weeks. You stay in the loop, but we handle the work. No back-and-forth.',
+    title: 'BUILD',
+    body: 'I design and build the full setup. You stay in the loop, but I handle the work. No back-and-forth.',
   },
   {
     num: '03',
-    title: 'YOU GO LIVE',
-    body: 'A site that converts, a booking flow that works, and a content pack ready to post on day one. Everything tested, everything live.',
+    title: 'LAUNCH',
+    body: 'Everything goes live, properly tested, with you walked through how it all works.',
   },
   {
     num: '04',
-    title: 'WE KEEP IT RUNNING',
-    body: 'Monthly retainer keeps everything maintained, updated, and growing. WhatsApp support whenever you need us. No silence between calls.',
+    title: 'KEEP IT GROWING',
+    body: 'Optional monthly retainer for maintenance, updates and improvements as you grow.',
   },
 ];
 
@@ -28,23 +28,19 @@ export default function HowItWorks() {
     <section className="how" id="how" aria-labelledby="how-title">
       <RevealOnScroll className="container">
         <p className="section-label">HOW IT WORKS</p>
-        <h2 id="how-title" className="section-headline" style={{ color: 'var(--cream)' }}>
-          Four steps. <em>Two weeks.</em> One sorted business.
+        <h2 id="how-title" className="section-headline">
+          Four steps. Roughly two weeks.
         </h2>
         <p className="section-intro">
           A clear, structured process so you always know exactly where things stand.
         </p>
-      </RevealOnScroll>
 
-      <RevealOnScroll className="container" style={{ padding: 0 }}>
         <ol className="how-grid">
           {STEPS.map((step) => (
             <li key={step.num} className="how-card">
               <div className="how-num" aria-hidden="true">{step.num}</div>
-              <div className="how-content">
-                <h3 className="how-title">{step.title}</h3>
-                <p className="how-body">{step.body}</p>
-              </div>
+              <h3 className="how-title">{step.title}</h3>
+              <p className="how-body">{step.body}</p>
             </li>
           ))}
         </ol>

@@ -1,21 +1,41 @@
+import Script from 'next/script';
 import RevealOnScroll from './RevealOnScroll';
 
 export default function CTABand() {
   return (
-    <div className="cta-band" id="contact">
+    <section className="cta-band" id="contact">
       <RevealOnScroll className="cta-inner">
-        <h2 className="cta-text">
-          Ready to get <em>sorted?</em>
-        </h2>
-        <div className="cta-actions">
-          <a href="mailto:[YOUR EMAIL]?subject=Discovery%20Call" className="cta-btn">
-            BOOK YOUR DISCOVERY CALL <span className="arrow" aria-hidden="true">→</span>
-          </a>
-          <p className="cta-meta">
-            30 minutes · No obligation · Doncaster &amp; surrounding areas
+        <div className="cta-head">
+          <p className="section-label">GET IN TOUCH</p>
+          <h2 className="cta-text">Ready to get sorted?</h2>
+          <p className="cta-sub">
+            Pick a time below for a free 20-minute discovery call. No pressure, no pitch, just a conversation.
           </p>
         </div>
+
+        <div className="tidycal-wrapper">
+          <div
+            className="tidycal-embed"
+            data-path="jessie-parkinson/discovery-call-seam-digital-studios"
+          ></div>
+        </div>
+
+        <p className="cta-fallback">
+          Trouble loading the calendar?{' '}
+          <a
+            href="https://tidycal.com/jessie-parkinson/discovery-call-seam-digital-studios"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Book directly on TidyCal →
+          </a>
+        </p>
       </RevealOnScroll>
-    </div>
+
+      <Script
+        src="https://asset-tidycal.b-cdn.net/js/embed.js"
+        strategy="afterInteractive"
+      />
+    </section>
   );
 }

@@ -4,20 +4,22 @@ export default function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero-inner">
-        <p className="hero-eyebrow">DIGITAL SETUP FOR BEAUTY &amp; WELLNESS</p>
-
         <Logo size="lg" as="h1" id="hero-title" style={{ color: 'var(--cream)' }} />
 
+        <p className="hero-tagline">
+          Your full digital setup, in one place.
+        </p>
+
         <p className="hero-sub">
-          Everything your salon or wellness business needs online — website, bookings, reviews, and content. All connected. All sorted.
+          Website, bookings, reviews and content. Built around your business. Working together from day one.
         </p>
 
         <div className="hero-btns">
           <a href="#contact" className="btn btn-primary">
             BOOK A DISCOVERY CALL <span className="arrow" aria-hidden="true">→</span>
           </a>
-          <a href="#services" className="btn btn-outline">
-            SEE THE WORK
+          <a href="/services" className="btn btn-outline">
+            SEE WHAT I DO
           </a>
         </div>
       </div>

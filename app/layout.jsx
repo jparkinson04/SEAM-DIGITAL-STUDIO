@@ -1,5 +1,8 @@
-import { Inter, Fraunces } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
+import Nav from '@/components/Nav';
+import CTABand from '@/components/CTABand';
+import Footer from '@/components/Footer';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -8,24 +11,21 @@ const inter = Inter({
   display: 'swap',
 });
 
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  style: ['normal', 'italic'],
-  variable: '--font-fraunces',
-  display: 'swap',
-});
-
 export const metadata = {
-  title: 'Seam Digital Studio — Digital Setup for Beauty & Wellness',
+  title: 'Seam Digital Studio, the complete digital setup for small businesses',
   description:
-    'A complete digital setup for beauty, wellness and salon businesses. Website, bookings, reviews and content — all connected. Based in Doncaster.',
+    'A complete digital setup for small businesses. Website, bookings, reviews and content, all connected and working together. Based in Doncaster.',
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
-      <body>{children}</body>
+    <html lang="en" className={inter.variable}>
+      <body>
+        <Nav />
+        <main id="top">{children}</main>
+        <CTABand />
+        <Footer />
+      </body>
     </html>
   );
 }

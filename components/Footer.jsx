@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Logo from './Logo';
 
 export default function Footer() {
@@ -8,35 +9,31 @@ export default function Footer() {
       <div className="footer-inner">
         <div className="footer-top">
           <div className="footer-brand">
-            <Logo
-              size="sm"
-              as="a"
-              href="#top"
-              aria-label="Seam Digital Studio — home"
-              style={{ color: 'var(--cream)' }}
-            />
-            <p>
-              Digital setup for local beauty and wellness businesses. Based in Doncaster, working across South Yorkshire.
+            <Link href="/" aria-label="Seam Digital Studio, home">
+              <Logo size="sm" style={{ color: 'var(--cream)' }} />
+            </Link>
+            <p style={{ marginTop: 20 }}>
+              The complete digital setup for small businesses. Based in Doncaster, working with clients across the UK.
             </p>
           </div>
 
           <div className="footer-col">
             <h5>NAVIGATE</h5>
             <ul>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#how">How it works</a></li>
-              <li><a href="#faq">FAQ</a></li>
+              <li><Link href="/services">Services</Link></li>
+              <li><Link href="/content">Content</Link></li>
+              <li><Link href="/portfolio">Portfolio</Link></li>
+              <li><Link href="/about">About</Link></li>
             </ul>
           </div>
 
           <div className="footer-col">
             <h5>SERVICES</h5>
             <ul>
-              <li><a href="#services">The Full Setup</a></li>
-              <li><a href="#services">Monthly Care</a></li>
-              <li><a href="#services">Content</a></li>
-              <li><a href="#contact">Enquire</a></li>
+              <li><Link href="/services">The Full Setup</Link></li>
+              <li><Link href="/services">Monthly Care</Link></li>
+              <li><Link href="/content">Content</Link></li>
+              <li><a href="#contact">Book a call</a></li>
             </ul>
           </div>
 
@@ -51,7 +48,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {year} SEAM STUDIO · ALL RIGHTS RESERVED</p>
+          <p>&copy; {year} SEAM DIGITAL STUDIO · ALL RIGHTS RESERVED</p>
           <div className="footer-socials">
             <a
               href="https://instagram.com/[YOUR HANDLE]"
@@ -61,7 +58,6 @@ export default function Footer() {
             >
               IG
             </a>
-            <a href="#" aria-label="Facebook">FB</a>
             <a href="#" aria-label="LinkedIn">IN</a>
           </div>
         </div>

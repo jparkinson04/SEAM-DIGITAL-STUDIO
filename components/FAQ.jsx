@@ -6,29 +6,24 @@ import RevealOnScroll from './RevealOnScroll';
 const ITEMS = [
   {
     q: 'How long does the setup take?',
-    a: "Two weeks from discovery call to live site, in most cases. We'll give you a firm timeline upfront so you know exactly when you're going live.",
-  },
-  {
-    q: 'Do I have to use a specific booking system?',
-    a: "No. We integrate with whatever you already use — Ticket Tailor, Fresha, Treatwell, Square, or anything else. If you don't have one yet, we'll recommend the right fit for your business.",
-  },
-  {
-    q: 'Am I locked into the retainer?',
-    a: "No long-term contracts. The monthly retainer is rolling — cancel any time with 30 days' notice. Most clients stay because the value's clear, not because they have to.",
-  },
-  {
-    q: 'What if I already have a website?',
-    a: "If your existing site works for you, great — we can connect everything else around it. If it isn't pulling its weight, we'll build something that does. The discovery call covers exactly this.",
+    a: "Around two weeks from discovery call to live site, in most cases. You'll get a firm timeline upfront so you know exactly when you're going live.",
   },
   {
     q: 'Who do you work with?',
-    a: "Local beauty, wellness, and salon businesses, mostly within 30 minutes of Doncaster. Independent owners, small teams, and anyone who wants their digital setup to actually feel sorted.",
+    a: "Independent business owners and small teams whose digital setup isn't pulling its weight. Anyone from a beauty studio or wellness practitioner to a freelance specialist, a small services firm, or a one-person shop. Mostly based within an hour of Doncaster, but I work remotely with clients further afield too.",
+  },
+  {
+    q: 'What if I already have a website?',
+    a: "If your existing site works for you, great. I can connect everything else around it. If it isn't pulling its weight, I'll build something that does. The discovery call covers exactly this.",
+  },
+  {
+    q: 'Am I locked into the monthly retainer?',
+    a: "No. The monthly retainer is rolling. Cancel any time with 30 days' notice. Most clients stay because the value's clear, not because they have to.",
   },
 ];
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
-
   const toggle = (i) => setOpenIndex((cur) => (cur === i ? -1 : i));
 
   return (
@@ -36,11 +31,8 @@ export default function FAQ() {
       <RevealOnScroll className="container">
         <p className="section-label">QUESTIONS</p>
         <h2 id="faq-title" className="section-headline">
-          Things people <em>actually ask.</em>
+          Things people actually ask.
         </h2>
-        <p className="section-intro">
-          If your question isn't here, message us. We answer everything.
-        </p>
 
         <div className="faq-list">
           {ITEMS.map((item, i) => {

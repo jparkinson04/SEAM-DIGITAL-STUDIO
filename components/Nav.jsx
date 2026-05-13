@@ -1,22 +1,20 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Logo from './Logo';
 
 const LINKS = [
-  { href: '#services', label: 'SERVICES' },
-  { href: '#about', label: 'ABOUT' },
-  { href: '#how', label: 'HOW IT WORKS' },
-  { href: '#faq', label: 'FAQ' },
+  { href: '/services', label: 'SERVICES' },
+  { href: '/content', label: 'CONTENT' },
+  { href: '/portfolio', label: 'PORTFOLIO' },
+  { href: '/about', label: 'ABOUT' },
 ];
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
-
-  // Close menu when any nav link is clicked
   const close = () => setOpen(false);
 
-  // Lock body scroll while the mobile menu is open
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
     return () => {
@@ -26,7 +24,9 @@ export default function Nav() {
 
   return (
     <nav className="nav" aria-label="Primary">
-      <Logo size="sm" as="a" href="#top" aria-label="Seam Digital Studio — home" />
+      <Link href="/" aria-label="Seam Digital Studio, home" onClick={close}>
+        <Logo size="sm" />
+      </Link>
 
       <button
         className="nav-toggle"
@@ -42,9 +42,9 @@ export default function Nav() {
 
       <div className={`nav-links${open ? ' is-open' : ''}`} id="nav-links">
         {LINKS.map((l) => (
-          <a key={l.href} href={l.href} onClick={close}>
+          <Link key={l.href} href={l.href} onClick={close}>
             {l.label}
-          </a>
+          </Link>
         ))}
         <a href="#contact" onClick={close} className="nav-cta">
           BOOK A CALL
