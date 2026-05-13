@@ -15,6 +15,11 @@ export const metadata = {
   title: 'Seam Digital Studio, the complete digital setup for small businesses',
   description:
     'A complete digital setup for small businesses. Website, bookings, reviews and content, all connected and working together. Based in Doncaster.',
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({ children }) {
