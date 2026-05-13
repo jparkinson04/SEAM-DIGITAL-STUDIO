@@ -1704,6 +1704,61 @@ section { padding: 120px 0; }
   letter-spacing: -0.005em;
 }
 
+/* When the cover holds a real photo — drop the noise overlay, drop hover lift */
+.case-study-cover--image {
+  cursor: default;
+  background: #e8dfd2;
+}
+.case-study-cover--image::before { display: none; }
+.case-study-cover--image:hover { transform: none; box-shadow: var(--shadow); }
+
+/* "Live soon" badge floating on the cover image */
+.case-study-soon-badge {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--cream);
+  background: rgba(14, 14, 14, 0.78);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 6px 11px;
+  border-radius: 999px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.case-study-soon-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: ig-ring 2.4s ease-in-out infinite;
+}
+
+/* "Live coming soon" disabled-style link in meta */
+.link-arrow--soon {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.link-arrow--soon::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: ig-ring 2.4s ease-in-out infinite;
+}
+
 /* PORTFOLIO PAGE --------------------------------------------------------- */
 .portfolio-soon { background: var(--cream); padding: 80px 0; }
 .portfolio-soon-card {

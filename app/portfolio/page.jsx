@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import RevealOnScroll from '@/components/RevealOnScroll';
 
 export const metadata = {
@@ -46,27 +47,27 @@ export default function PortfolioPage() {
           </header>
 
           <article className="case-study-card">
-            <a
-              href="[BOHEMIA URL]"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="case-study-cover"
-              aria-label="Visit Bohemia Wellness, opens in new tab"
+            <div
+              className="case-study-cover case-study-cover--image"
+              role="img"
+              aria-label="Bohemia Wellness website hero screenshot"
             >
-              <div className="case-study-cover-inner">
-                <div>
-                  <p className="case-study-cover-label">BOHEMIA</p>
-                  <p className="case-study-cover-sub">WELLNESS</p>
-                </div>
-                <p className="case-study-cover-cta">VIEW LIVE SITE <span aria-hidden="true">↗</span></p>
-              </div>
-            </a>
+              <Image
+                src="/bohemia-website.jpg"
+                alt=""
+                fill
+                sizes="(max-width: 1000px) 100vw, 620px"
+                style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                priority={false}
+              />
+              <span className="case-study-soon-badge">PREVIEW · LIVE SOON</span>
+            </div>
 
             <div className="case-study-meta">
               <p className="case-study-tag">RECENT BUILD</p>
               <h3 className="case-study-title">A wellness studio, fully set up online.</h3>
               <p className="case-study-body">
-                [PLACEHOLDER, JESSIE TO REPLACE: A complete digital setup for Claire&apos;s wellness studio. Custom website, booking integration, Google reviews and content support. Built to feel calm, professional, and easy to find.]
+                [PLACEHOLDER, JESSIE TO REPLACE: A complete digital setup for Claire Whitfield&apos;s wellness sanctuary. Custom website, booking integration, reviews and ongoing content. Designed to feel as warm and grounded as the studio itself.]
               </p>
 
               <dl className="case-study-meta-list">
@@ -80,18 +81,13 @@ export default function PortfolioPage() {
                 </div>
                 <div>
                   <dt>STATUS</dt>
-                  <dd>Live</dd>
+                  <dd>Going live soon</dd>
                 </div>
               </dl>
 
-              <a
-                href="[BOHEMIA URL]"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-arrow"
-              >
-                VIEW THE LIVE SITE <span aria-hidden="true">↗</span>
-              </a>
+              <p className="link-arrow link-arrow--soon">
+                LIVE SITE COMING SOON
+              </p>
             </div>
           </article>
         </RevealOnScroll>
