@@ -12,6 +12,7 @@ const inter = Inter({
 });
 
 export const metadata = {
+  metadataBase: new URL('https://seamdigitalstudio.com'),
   title: 'Seam Digital Studio, the complete digital setup for small businesses',
   description:
     'A complete digital setup for small businesses. Website, bookings, reviews and content, all connected and working together. Based in Doncaster.',
@@ -19,6 +20,14 @@ export const metadata = {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
     apple: '/favicon.svg',
+  },
+  openGraph: {
+    type: 'website',
+    title: 'Seam Digital Studio',
+    description:
+      'A complete digital setup for small businesses. Website, bookings, reviews and content, all connected.',
+    url: 'https://seamdigitalstudio.com',
+    siteName: 'Seam Digital Studio',
   },
 };
 

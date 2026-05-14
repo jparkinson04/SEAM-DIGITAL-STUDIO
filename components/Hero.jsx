@@ -3,6 +3,13 @@ import Logo from './Logo';
 export default function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-title">
+      {/* Drifting glow orbs — soft luminous motion behind the content */}
+      <div className="hero-glows" aria-hidden="true">
+        <span className="hero-glow hero-glow--a"></span>
+        <span className="hero-glow hero-glow--b"></span>
+        <span className="hero-glow hero-glow--c"></span>
+      </div>
+
       <div className="hero-inner">
         <Logo size="lg" as="h1" id="hero-title" style={{ color: 'var(--cream)' }} />
 
