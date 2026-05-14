@@ -67,7 +67,7 @@ export default function PortfolioPage() {
               <p className="case-study-tag">RECENT BUILD</p>
               <h3 className="case-study-title">A wellness studio, fully set up online.</h3>
               <p className="case-study-body">
-                [PLACEHOLDER, JESSIE TO REPLACE: A complete digital setup for Claire Whitfield&apos;s wellness sanctuary. Custom website, booking integration, reviews and ongoing content. Designed to feel as warm and grounded as the studio itself.]
+                Bohemia is Claire Whitfield&apos;s wellness sanctuary, 25 years in the making. Her digital setup needed to feel just as warm and considered as the studio itself. A custom site, integrated bookings, automated reviews, and ongoing content support, all running from one place.
               </p>
 
               <dl className="case-study-meta-list">
