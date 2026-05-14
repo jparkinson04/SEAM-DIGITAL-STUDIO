@@ -40,7 +40,7 @@ export default function Footer() {
           <div className="footer-col">
             <h5>CONTACT</h5>
             <ul>
-              <li><a href="mailto:[YOUR EMAIL]">[YOUR EMAIL]</a></li>
+              <li><a href="mailto:jessie@expert-voice.co.uk">jessie@expert-voice.co.uk</a></li>
               <li><a href="#contact">Book a call</a></li>
               <li><a href="#">Doncaster, UK</a></li>
             </ul>
@@ -51,8 +51,8 @@ export default function Footer() {
           <p>&copy; {year} SEAM DIGITAL STUDIO · ALL RIGHTS RESERVED</p>
           <div className="footer-socials">
             <a
-              href="https://instagram.com/[YOUR HANDLE]"
-              aria-label="Instagram"
+              href="https://www.instagram.com/seamdigitalstudio"
+              aria-label="Instagram, opens in new tab"
               target="_blank"
               rel="noopener noreferrer"
             >

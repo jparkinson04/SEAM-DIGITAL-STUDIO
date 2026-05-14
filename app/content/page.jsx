@@ -96,26 +96,6 @@ export default function ContentPage() {
                   </div>
                 </div>
 
-                {/* FACEBOOK */}
-                <div className="visual-card fb-mock" aria-hidden="true">
-                  <p className="platform-tag">FACEBOOK</p>
-                  <div className="fb-cover"></div>
-                  <div className="fb-header">
-                    <div className="fb-avatar"></div>
-                    <div className="fb-info">
-                      <p className="fb-name">Your Business</p>
-                      <p className="fb-meta">Local business · 1.2K followers</p>
-                    </div>
-                  </div>
-                  <div className="fb-cta-row">
-                    <span className="fb-cta-primary">+ Follow</span>
-                    <span className="fb-cta-secondary">Message</span>
-                  </div>
-                  <div className="fb-post">
-                    <p className="fb-post-meta">Just now · Public</p>
-                    <p className="fb-post-content">New autumn schedule is out. Book before they go.</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
