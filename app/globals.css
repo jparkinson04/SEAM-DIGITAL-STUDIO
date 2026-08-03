@@ -1029,33 +1029,27 @@ section { padding: 120px 0; }
 }
 .project-detail-grid {
   display: grid;
-  grid-template-columns: 7fr 4fr;
-  gap: 64px;
+  grid-template-columns: 5fr 7fr;
+  gap: 72px;
   align-items: start;
 }
-.project-detail-facts { padding-top: 6px; }
+/* Role table sits left of the overview on desktop, below it on mobile */
+.project-detail-grid .project-role { grid-column: 1; grid-row: 1; }
+.project-detail-grid .project-overview { grid-column: 2; grid-row: 1; }
 
-.project-role {
-  margin-top: 72px;
-  padding-top: 48px;
-  border-top: 1px solid var(--line);
-}
 .project-role-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 48px;
-  margin-top: 20px;
+  margin-top: 18px;
+  border-top: 1px solid var(--line);
 }
 .project-role-list li {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 20px 0;
+  gap: 6px;
+  padding: 14px 0;
   border-bottom: 1px solid var(--line);
 }
-.project-role-list li:has(p) { grid-column: 1 / -1; }
 .project-role-list strong {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 800;
   letter-spacing: -0.01em;
   display: flex;
@@ -1071,10 +1065,25 @@ section { padding: 120px 0; }
   flex-shrink: 0;
 }
 .project-role-list li p {
-  font-size: 14px;
-  line-height: 1.65;
+  font-size: 13px;
+  line-height: 1.6;
   color: var(--muted);
   padding-left: 18px;
+}
+
+.project-gallery {
+  margin-top: 80px;
+  display: grid;
+  gap: 24px;
+}
+.project-gallery .section-label { margin-bottom: 4px; }
+.project-gallery-item {
+  position: relative;
+  aspect-ratio: 1.92;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--cream-2);
 }
 .case-study-cover {
   display: block;
@@ -1338,9 +1347,11 @@ section { padding: 120px 0; }
   .capabilities-grid { grid-template-columns: 1fr; gap: 16px; }
   .portfolio-soon-card { padding: 40px 28px; }
   .case-study-card { grid-template-columns: 1fr; gap: 24px; padding: 20px; }
-  .project-detail-grid { grid-template-columns: 1fr; gap: 32px; }
+  .project-detail-grid { grid-template-columns: 1fr; gap: 40px; }
+  .project-detail-grid .project-role { grid-column: 1; grid-row: 2; }
+  .project-detail-grid .project-overview { grid-column: 1; grid-row: 1; }
   .project-detail-image { margin-bottom: 36px; }
-  .project-role-list { grid-template-columns: 1fr; }
+  .project-gallery { margin-top: 56px; gap: 16px; }
   .case-study-meta { padding: 8px; }
   .case-study-title { font-size: 26px; }
   .selected-work-head .section-headline { font-size: 32px; }

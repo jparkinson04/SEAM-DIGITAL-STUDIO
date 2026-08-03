@@ -27,7 +27,7 @@ export default async function ProjectPage({ params }) {
     <>
       <section className="page-hero">
         <RevealOnScroll className="container">
-          <p className="section-label">WORK · CASE STUDY</p>
+          <p className="section-label">WORK</p>
           <h1 className="page-hero-title">{project.name}.</h1>
           <p className="page-hero-sub">{project.title}</p>
         </RevealOnScroll>
@@ -52,44 +52,52 @@ export default async function ProjectPage({ params }) {
           </div>
 
           <div className="project-detail-grid">
-            <div className="about-body">
+            <aside className="project-role">
+              <p className="section-label">OUR ROLE</p>
+              <ul className="project-role-list">
+                {project.role.map((r) => (
+                  <li key={r.title}>
+                    <strong>{r.title}</strong>
+                    {r.note && <p>{r.note}</p>}
+                  </li>
+                ))}
+              </ul>
+            </aside>
+
+            <div className="project-overview about-body">
               {project.detail.map((para) => (
                 <p key={para}>{para}</p>
               ))}
             </div>
-
-            <dl className="case-study-meta-list project-detail-facts">
-              <div>
-                <dt>CLIENT</dt>
-                <dd>{project.client}</dd>
-              </div>
-              <div>
-                <dt>STATUS</dt>
-                <dd>{project.status}</dd>
-              </div>
-            </dl>
           </div>
         </RevealOnScroll>
 
-        <RevealOnScroll className="container">
-          <div className="project-role">
-            <p className="section-label">OUR ROLE</p>
-            <ul className="project-role-list">
-              {project.role.map((r) => (
-                <li key={r.title}>
-                  <strong>{r.title}</strong>
-                  {r.note && <p>{r.note}</p>}
-                </li>
+        {project.gallery?.length > 0 && (
+          <RevealOnScroll className="container">
+            <div className="project-gallery">
+              <p className="section-label">A CLOSER LOOK</p>
+              {project.gallery.map((shot) => (
+                <div key={shot.src} className="project-gallery-item" role="img" aria-label={shot.alt}>
+                  <Image
+                    src={shot.src}
+                    alt=""
+                    fill
+                    sizes="(max-width: 1000px) 100vw, 1200px"
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
               ))}
-            </ul>
-          </div>
+            </div>
+          </RevealOnScroll>
+        )}
 
+        <div className="container">
           <p className="back-to-work">
             <Link href="/work" className="link-arrow">
               <span aria-hidden="true">←</span> ALL WORK
             </Link>
           </p>
-        </RevealOnScroll>
+        </div>
       </section>
     </>
   );

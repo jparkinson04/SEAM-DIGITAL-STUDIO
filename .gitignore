@@ -38,3 +38,6 @@ yarn-error.log*
 # TypeScript (just in case)
 *.tsbuildinfo
 next-env.d.ts
+
+# Raw screenshots dropped in the project root (converted copies live in public/)
+Screenshot *.png

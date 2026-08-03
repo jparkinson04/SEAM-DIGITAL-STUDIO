@@ -75,16 +75,8 @@ export default function WorkPage() {
 
                     <dl className="case-study-meta-list">
                       <div>
-                        <dt>CLIENT</dt>
-                        <dd>{p.client}</dd>
-                      </div>
-                      <div>
                         <dt>SCOPE</dt>
                         <dd>{p.scope}</dd>
-                      </div>
-                      <div>
-                        <dt>STATUS</dt>
-                        <dd>{p.status}</dd>
                       </div>
                     </dl>
 
