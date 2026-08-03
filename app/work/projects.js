@@ -67,6 +67,16 @@ export const PROJECTS = [
       { title: 'Website hosting' },
       { title: 'Website maintenance' },
     ],
+    gallery: [
+      {
+        src: '/jbe-projects.jpg',
+        alt: 'JBE Interiors projects page showing recent restaurant fit-outs',
+      },
+      {
+        src: '/jbe-project-detail.jpg',
+        alt: 'JBE Interiors individual project page for a central London restaurant fit-out',
+      },
+    ],
   },
 ];
 
