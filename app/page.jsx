@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero';
 import Marquee from '@/components/Marquee';
+import RotatingGraphics from '@/components/RotatingGraphics';
 import Services from '@/components/Services';
 import About from '@/components/About';
 import HowItWorks from '@/components/HowItWorks';
@@ -10,6 +11,7 @@ export default function Home() {
     <>
       <Hero />
       <Marquee />
+      <RotatingGraphics />
       <Services />
       <About />
       <HowItWorks />
