@@ -78,6 +78,39 @@ export const PROJECTS = [
       },
     ],
   },
+  {
+    slug: 'teachecho',
+    name: 'TeachEcho',
+    tag: 'PLATFORM BUILD',
+    title: 'A staff wellbeing platform for schools.',
+    teaser:
+      'Echo helps schools and trusts understand how their staff are really feeling. Branding, site and booking flow, all built from scratch.',
+    scope: 'Website, branding + booking system',
+    liveUrl: 'https://teachecho.co.uk/',
+    image: '/teachecho-website.jpg',
+    imageAlt: 'TeachEcho website hero reading staff wellbeing insight, built around real psychology',
+    detail: [
+      'Echo is a staff wellbeing platform for schools and multi-academy trusts. A monthly anonymous pulse survey turns staff voice into clear, board-ready insight, built around real psychology.',
+      'We created the brand and built the site from scratch, with the UX and UI shaped around busy school leaders: one clear message, simple per-school pricing, and a booking system so schools can book a demo in a couple of clicks. Hosting is handled by us too.',
+    ],
+    role: [
+      { title: 'Branding' },
+      { title: 'UX and UI design' },
+      { title: 'Website design and build' },
+      { title: 'Website hosting' },
+      { title: 'Booking system implementation' },
+    ],
+    gallery: [
+      {
+        src: '/teachecho-product.jpg',
+        alt: 'TeachEcho product overview showing the monthly survey and its three outputs',
+      },
+      {
+        src: '/teachecho-pricing.jpg',
+        alt: 'TeachEcho pricing page with simple per-school pricing',
+      },
+    ],
+  },
 ];
 
 export function getProject(slug) {
