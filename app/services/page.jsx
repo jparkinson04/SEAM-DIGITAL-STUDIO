@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import RevealOnScroll from '@/components/RevealOnScroll';
 import HowItWorks from '@/components/HowItWorks';
 
@@ -166,7 +165,7 @@ export default function ServicesPage() {
 
           <p className="content-mention">
             <strong>Also offering content support.</strong> Captions, visuals, and a posting rhythm built around your goals.{' '}
-            <Link href="/content">Read about content</Link>.
+            <a href="#contact">Get in touch to find out more</a>.
           </p>
         </RevealOnScroll>
       </section>

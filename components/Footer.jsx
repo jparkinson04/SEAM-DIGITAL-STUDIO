@@ -21,7 +21,6 @@ export default function Footer() {
             <h5>NAVIGATE</h5>
             <ul>
               <li><Link href="/services">Services</Link></li>
-              <li><Link href="/content">Content</Link></li>
               <li><Link href="/portfolio">Portfolio</Link></li>
               <li><Link href="/about">About</Link></li>
             </ul>
@@ -32,7 +31,6 @@ export default function Footer() {
             <ul>
               <li><Link href="/services">The Full Setup</Link></li>
               <li><Link href="/services">Monthly Care</Link></li>
-              <li><Link href="/content">Content</Link></li>
               <li><a href="#contact">Book a call</a></li>
             </ul>
           </div>

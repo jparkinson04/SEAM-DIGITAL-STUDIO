@@ -6,7 +6,6 @@ import Logo from './Logo';
 
 const LINKS = [
   { href: '/services', label: 'SERVICES' },
-  { href: '/content', label: 'CONTENT' },
   { href: '/portfolio', label: 'PORTFOLIO' },
   { href: '/about', label: 'ABOUT' },
 ];

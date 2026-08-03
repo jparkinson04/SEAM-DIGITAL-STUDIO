@@ -14,12 +14,6 @@ const PREVIEWS = [
     body: 'Updates, fixes and improvements, all handled by one trusted contact.',
     href: '/services',
   },
-  {
-    label: 'CONTENT',
-    title: 'Content that works as hard as you do.',
-    body: 'Captions, visuals and a posting rhythm, built around your goals and your audience.',
-    href: '/content',
-  },
 ];
 
 export default function Services() {
@@ -32,7 +26,7 @@ export default function Services() {
             Your full digital setup, sorted.
           </h2>
           <p className="section-intro">
-            Three services that work together, or stand alone.
+            Two services that work together, or stand alone.
           </p>
         </header>
       </RevealOnScroll>
