@@ -19,6 +19,17 @@ export const PROJECTS = [
       'The site was designed and written around her clients, with the look and the words shaped to match the warmth of the studio. Online bookings, Google reviews and ongoing content support sit on top of the core build.',
       'The site is in its final stages and will be linked here as soon as it goes live.',
     ],
+    role: [
+      { title: 'Branding' },
+      { title: 'UX and UI design' },
+      { title: 'Website design and build' },
+      { title: 'Website hosting' },
+      { title: 'Booking system implementation' },
+      {
+        title: 'AI chatbot',
+        note: 'An on-site assistant that helps visitors learn more about the business. Wellness is a newer industry for many people, so the chatbot answers questions and helps customers understand the benefits before they book.',
+      },
+    ],
   },
 ];
 

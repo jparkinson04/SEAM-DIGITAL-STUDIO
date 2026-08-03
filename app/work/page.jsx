@@ -6,7 +6,7 @@ import { PROJECTS } from './projects';
 export const metadata = {
   title: 'Work, Seam Digital Studio',
   description:
-    'Selected work from Seam Digital Studio. Recent builds and in-progress projects, with a closer look at each one.',
+    'Our work at Seam Digital Studio. Recent builds and in-progress projects, with a closer look at each one.',
 };
 
 const CAPABILITIES = [
@@ -34,7 +34,7 @@ export default function WorkPage() {
       <section className="page-hero">
         <RevealOnScroll className="container">
           <p className="section-label">WORK</p>
-          <h1 className="page-hero-title">Selected work.</h1>
+          <h1 className="page-hero-title">Our Work.</h1>
           <p className="page-hero-sub">
             Recent and in-progress builds. Click a project for a closer look.
           </p>

@@ -1015,6 +1015,67 @@ section { padding: 120px 0; }
 .case-study-link:hover { transform: translateY(-4px); }
 .case-study-link:hover .case-study-card { box-shadow: var(--shadow-lg); }
 .back-to-work { margin-top: 40px; }
+
+/* PROJECT DETAIL (subpage of /work) ------------------------------------- */
+.project-detail { background: var(--cream); padding: 8px 0 96px; }
+.project-detail-image {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--ink);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-bottom: 56px;
+}
+.project-detail-grid {
+  display: grid;
+  grid-template-columns: 7fr 4fr;
+  gap: 64px;
+  align-items: start;
+}
+.project-detail-facts { padding-top: 6px; }
+
+.project-role {
+  margin-top: 72px;
+  padding-top: 48px;
+  border-top: 1px solid var(--line);
+}
+.project-role-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 48px;
+  margin-top: 20px;
+}
+.project-role-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+.project-role-list li:has(p) { grid-column: 1 / -1; }
+.project-role-list strong {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.project-role-list strong::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+.project-role-list li p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--muted);
+  padding-left: 18px;
+}
 .case-study-cover {
   display: block;
   aspect-ratio: 4 / 3;
@@ -1277,6 +1338,9 @@ section { padding: 120px 0; }
   .capabilities-grid { grid-template-columns: 1fr; gap: 16px; }
   .portfolio-soon-card { padding: 40px 28px; }
   .case-study-card { grid-template-columns: 1fr; gap: 24px; padding: 20px; }
+  .project-detail-grid { grid-template-columns: 1fr; gap: 32px; }
+  .project-detail-image { margin-bottom: 36px; }
+  .project-role-list { grid-template-columns: 1fr; }
   .case-study-meta { padding: 8px; }
   .case-study-title { font-size: 26px; }
   .selected-work-head .section-headline { font-size: 32px; }

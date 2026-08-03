@@ -33,51 +33,56 @@ export default async function ProjectPage({ params }) {
         </RevealOnScroll>
       </section>
 
-      <section className="selected-work">
+      <section className="project-detail">
         <RevealOnScroll className="container">
-          <article className="case-study-card">
-            <div
-              className="case-study-cover case-study-cover--image"
-              role="img"
-              aria-label={project.imageAlt}
-            >
-              <Image
-                src={project.image}
-                alt=""
-                fill
-                sizes="(max-width: 1000px) 100vw, 620px"
-                style={{ objectFit: 'cover', objectPosition: 'center top' }}
-                priority
-              />
-              <span className="case-study-soon-badge">PREVIEW · LIVE SOON</span>
-            </div>
+          <div
+            className="project-detail-image"
+            role="img"
+            aria-label={project.imageAlt}
+          >
+            <Image
+              src={project.image}
+              alt=""
+              fill
+              sizes="(max-width: 1000px) 100vw, 1200px"
+              style={{ objectFit: 'cover', objectPosition: 'center top' }}
+              priority
+            />
+            <span className="case-study-soon-badge">PREVIEW · LIVE SOON</span>
+          </div>
 
-            <div className="case-study-meta">
-              <p className="case-study-tag">{project.tag}</p>
+          <div className="project-detail-grid">
+            <div className="about-body">
               {project.detail.map((para) => (
-                <p key={para} className="case-study-body">
-                  {para}
-                </p>
+                <p key={para}>{para}</p>
               ))}
-
-              <dl className="case-study-meta-list">
-                <div>
-                  <dt>CLIENT</dt>
-                  <dd>{project.client}</dd>
-                </div>
-                <div>
-                  <dt>SCOPE</dt>
-                  <dd>{project.scope}</dd>
-                </div>
-                <div>
-                  <dt>STATUS</dt>
-                  <dd>{project.status}</dd>
-                </div>
-              </dl>
-
-              <p className="link-arrow link-arrow--soon">LIVE SITE COMING SOON</p>
             </div>
-          </article>
+
+            <dl className="case-study-meta-list project-detail-facts">
+              <div>
+                <dt>CLIENT</dt>
+                <dd>{project.client}</dd>
+              </div>
+              <div>
+                <dt>STATUS</dt>
+                <dd>{project.status}</dd>
+              </div>
+            </dl>
+          </div>
+        </RevealOnScroll>
+
+        <RevealOnScroll className="container">
+          <div className="project-role">
+            <p className="section-label">OUR ROLE</p>
+            <ul className="project-role-list">
+              {project.role.map((r) => (
+                <li key={r.title}>
+                  <strong>{r.title}</strong>
+                  {r.note && <p>{r.note}</p>}
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <p className="back-to-work">
             <Link href="/work" className="link-arrow">
