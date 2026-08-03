@@ -4,40 +4,11 @@ import { useEffect, useState } from 'react';
 
 const HOLD_MS = 4000;
 
-// 5-point star, outer radius 13, drawn around (0,0)
-const STAR =
-  'M0 -13 L3.23 -4.45 L12.36 -4.02 L5.23 1.72 L7.64 10.52 L0 5.5 L-7.64 10.52 L-5.23 1.72 L-12.36 -4.02 L-3.23 -4.45 Z';
-
 const SLIDES = [
   {
-    key: 'web',
-    label: 'WEB DESIGN',
-    caption: 'One website. Every screen.',
-    aria: 'Line drawing of a laptop, tablet and phone all showing the same simple website layout',
-    art: (
-      <>
-        {/* laptop */}
-        <rect x="90" y="44" width="190" height="122" rx="8" pathLength={1} data-d="0" />
-        <path d="M78 176 L90 166 M292 176 L280 166 M70 176 H300" pathLength={1} data-d="1" />
-        <rect x="112" y="64" width="70" height="8" rx="3" pathLength={1} data-d="2" />
-        <rect x="112" y="86" width="146" height="30" rx="4" pathLength={1} data-d="3" />
-        <rect x="112" y="126" width="98" height="24" rx="4" pathLength={1} data-d="4" />
-        {/* tablet */}
-        <rect x="268" y="72" width="104" height="152" rx="10" pathLength={1} data-d="3" />
-        <rect x="286" y="94" width="48" height="7" rx="3" pathLength={1} data-d="4" />
-        <rect x="286" y="114" width="68" height="42" rx="4" pathLength={1} data-d="5" />
-        <circle cx="320" cy="206" r="3" pathLength={1} data-d="6" />
-        {/* phone */}
-        <rect x="196" y="138" width="76" height="126" rx="12" pathLength={1} data-d="5" />
-        <rect x="212" y="158" width="34" height="6" rx="3" pathLength={1} data-d="6" />
-        <rect x="212" y="176" width="44" height="32" rx="4" pathLength={1} data-d="7" />
-        <path d="M222 248 H246" pathLength={1} data-d="7" />
-      </>
-    ),
-  },
-  {
-    key: 'brand',
-    label: 'BRANDING',
+    key: 'branding',
+    title: 'Branding',
+    body: 'Logo, colours and type, with the assets to use them consistently. A look that fits who you are, everywhere it shows up.',
     caption: 'A brand that holds together.',
     aria: 'Line drawing of a brand board with a logo circle, colour swatches and typography rules',
     art: (
@@ -55,66 +26,89 @@ const SLIDES = [
     ),
   },
   {
-    key: 'messaging',
-    label: 'MESSAGING',
-    caption: 'Messaging that sounds like you.',
-    aria: 'Line drawing of two overlapping speech bubbles, one with text lines and one with a spark',
+    key: 'web',
+    title: 'Website design and creation',
+    body: 'Fast, modern sites designed around how your customers browse and decide. Built from scratch, made to look right on every screen.',
+    caption: 'One website. Every screen.',
+    aria: 'Line drawing of a laptop, tablet and phone all showing the same simple website layout',
     art: (
       <>
-        <path
-          d="M98 70 H244 A14 14 0 0 1 258 84 V154 A14 14 0 0 1 244 168 H150 L124 194 V168 H98 A14 14 0 0 1 84 154 V84 A14 14 0 0 1 98 70 Z"
-          pathLength={1}
-          data-d="0"
-        />
-        <path d="M112 102 H210" pathLength={1} data-d="1" />
-        <path d="M112 120 H232" pathLength={1} data-d="2" />
-        <path d="M112 138 H180" pathLength={1} data-d="3" />
-        <path
-          d="M276 46 H336 A12 12 0 0 1 348 58 V106 A12 12 0 0 1 336 118 H316 V142 L294 118 H276 A12 12 0 0 1 264 106 V58 A12 12 0 0 1 276 46 Z"
-          pathLength={1}
-          data-d="4"
-        />
-        <path d="M306 66 V98 M290 82 H322 M295 71 L317 93 M317 71 L295 93" strokeWidth="2.5" pathLength={1} data-d="6" />
+        <rect x="90" y="44" width="190" height="122" rx="8" pathLength={1} data-d="0" />
+        <path d="M78 176 L90 166 M292 176 L280 166 M70 176 H300" pathLength={1} data-d="1" />
+        <rect x="112" y="64" width="70" height="8" rx="3" pathLength={1} data-d="2" />
+        <rect x="112" y="86" width="146" height="30" rx="4" pathLength={1} data-d="3" />
+        <rect x="112" y="126" width="98" height="24" rx="4" pathLength={1} data-d="4" />
+        <rect x="268" y="72" width="104" height="152" rx="10" pathLength={1} data-d="3" />
+        <rect x="286" y="94" width="48" height="7" rx="3" pathLength={1} data-d="4" />
+        <rect x="286" y="114" width="68" height="42" rx="4" pathLength={1} data-d="5" />
+        <circle cx="320" cy="206" r="3" pathLength={1} data-d="6" />
+        <rect x="196" y="138" width="76" height="126" rx="12" pathLength={1} data-d="5" />
+        <rect x="212" y="158" width="34" height="6" rx="3" pathLength={1} data-d="6" />
+        <rect x="212" y="176" width="44" height="32" rx="4" pathLength={1} data-d="7" />
+        <path d="M222 248 H246" pathLength={1} data-d="7" />
       </>
     ),
   },
   {
-    key: 'reviews',
-    label: 'REVIEWS',
-    caption: 'Reviews working for your SEO.',
-    aria: 'Line drawing of a customer review card with five stars, an avatar and two lines of text',
+    key: 'uiux',
+    title: 'UI & UX',
+    body: 'Layouts, journeys and the little details, shaped by user psychology. Easy to navigate, and always clear about what to do next.',
+    caption: 'Designed around real people.',
+    aria: 'Line drawing of a browser window wireframe with a cursor clicking a button',
     art: (
       <>
-        <rect x="76" y="50" width="268" height="180" rx="12" pathLength={1} data-d="0" />
-        <path d={STAR} transform="translate(118 100)" className="rg-fill" pathLength={1} data-d="1" />
-        <path d={STAR} transform="translate(160 100)" className="rg-fill" pathLength={1} data-d="2" />
-        <path d={STAR} transform="translate(202 100)" className="rg-fill" pathLength={1} data-d="3" />
-        <path d={STAR} transform="translate(244 100)" className="rg-fill" pathLength={1} data-d="4" />
-        <path d={STAR} transform="translate(286 100)" pathLength={1} data-d="5" />
-        <circle cx="118" cy="178" r="17" pathLength={1} data-d="6" />
-        <path d="M150 170 H286" pathLength={1} data-d="7" />
-        <path d="M150 188 H238" pathLength={1} data-d="7" />
+        <rect x="84" y="48" width="252" height="180" rx="10" pathLength={1} data-d="0" />
+        <path d="M84 86 H336" pathLength={1} data-d="1" />
+        <circle cx="104" cy="67" r="4" pathLength={1} data-d="1" />
+        <circle cx="120" cy="67" r="4" pathLength={1} data-d="2" />
+        <circle cx="136" cy="67" r="4" pathLength={1} data-d="2" />
+        <rect x="104" y="106" width="62" height="102" rx="6" pathLength={1} data-d="3" />
+        <path d="M116 126 H154 M116 144 H144 M116 162 H150" pathLength={1} data-d="4" />
+        <rect x="184" y="106" width="132" height="34" rx="6" pathLength={1} data-d="5" />
+        <rect x="184" y="154" width="92" height="26" rx="8" pathLength={1} data-d="6" />
+        <path d="M200 167 H244" pathLength={1} data-d="6" />
+        <path d="M258 160 L258 196 L268 187 L276 202 L284 197 L276 183 L289 181 Z" strokeWidth="2.5" pathLength={1} data-d="7" />
       </>
     ),
   },
   {
-    key: 'social',
-    label: 'SOCIAL',
-    caption: 'Content with a plan.',
-    aria: 'Line drawing of a three by three social feed grid with one enlarged tile playing a video',
+    key: 'hosting',
+    title: 'Hosting',
+    body: 'Your site kept fast, secure and online, with domains and the technical bits handled. One less thing to think about.',
+    caption: 'Fast, secure, always on.',
+    aria: 'Line drawing of a stack of servers with status lights and a signal above',
     art: (
       <>
-        <rect x="126" y="44" width="52" height="52" rx="10" pathLength={1} data-d="0" />
-        <rect x="190" y="44" width="52" height="52" rx="10" pathLength={1} data-d="1" />
-        <rect x="254" y="44" width="52" height="52" rx="10" pathLength={1} data-d="2" />
-        <rect x="126" y="108" width="52" height="52" rx="10" pathLength={1} data-d="2" />
-        <rect x="190" y="108" width="52" height="52" rx="10" pathLength={1} data-d="3" />
-        <rect x="126" y="172" width="52" height="52" rx="10" pathLength={1} data-d="4" />
-        <rect x="190" y="172" width="52" height="52" rx="10" pathLength={1} data-d="5" />
-        <rect x="254" y="172" width="52" height="52" rx="10" pathLength={1} data-d="6" />
-        {/* enlarged tile with play mark */}
-        <rect x="248" y="102" width="84" height="84" rx="14" strokeWidth="2.5" pathLength={1} data-d="5" />
-        <path d="M280 128 L308 144 L280 160 Z" pathLength={1} data-d="7" />
+        <path d="M186 58 A34 34 0 0 1 234 58" pathLength={1} data-d="0" />
+        <path d="M170 42 A62 62 0 0 1 250 42" pathLength={1} data-d="1" />
+        <circle cx="210" cy="70" r="3" className="rg-fill" pathLength={1} data-d="2" />
+        <rect x="130" y="88" width="160" height="42" rx="8" pathLength={1} data-d="3" />
+        <circle cx="154" cy="109" r="4" pathLength={1} data-d="4" />
+        <path d="M240 109 H268" pathLength={1} data-d="4" />
+        <rect x="130" y="140" width="160" height="42" rx="8" pathLength={1} data-d="5" />
+        <circle cx="154" cy="161" r="4" className="rg-fill" pathLength={1} data-d="6" />
+        <path d="M240 161 H268" pathLength={1} data-d="6" />
+        <rect x="130" y="192" width="160" height="42" rx="8" pathLength={1} data-d="6" />
+        <circle cx="154" cy="213" r="4" pathLength={1} data-d="7" />
+        <path d="M240 213 H268" pathLength={1} data-d="7" />
+        <path d="M116 252 H304" pathLength={1} data-d="7" />
+      </>
+    ),
+  },
+  {
+    key: 'care',
+    title: 'Ongoing maintenance',
+    body: 'Updates, tweaks and support after launch, so the site keeps improving without you having to think about it.',
+    caption: 'Kept sharp, long after launch.',
+    aria: 'Line drawing of a circular refresh arrow around a tick mark',
+    art: (
+      <>
+        <path d="M210 66 A74 74 0 1 1 143 108" pathLength={1} data-d="0" />
+        <path d="M143 108 L139 88 M143 108 L162 102" strokeWidth="2.5" pathLength={1} data-d="2" />
+        <circle cx="210" cy="140" r="36" pathLength={1} data-d="3" />
+        <path d="M193 140 L206 153 L229 125" strokeWidth="2.5" pathLength={1} data-d="5" />
+        <path d="M286 76 L296 66 M296 76 L286 66" pathLength={1} data-d="6" />
+        <path d="M128 196 H152 M140 184 V208" pathLength={1} data-d="7" />
       </>
     ),
   },
@@ -159,64 +153,76 @@ export default function RotatingGraphics() {
   };
 
   return (
-    <section className={`rg${paused ? ' is-paused' : ''}`} aria-labelledby="rg-title">
+    <section className={`rg${paused ? ' is-paused' : ''}`} aria-label="What we make">
       <div className="container">
-        <header className="rg-head">
-          <p className="section-label">WHAT WE MAKE</p>
-          <h2 id="rg-title" className="section-headline">
-            Cut from the same cloth.
-          </h2>
-        </header>
-
         <div
-          className="rg-stage"
-          aria-live="off"
+          className="rg-grid"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => {
             setPaused(false);
             setCycle((c) => c + 1);
           }}
         >
-          <div className="rg-glow" aria-hidden="true"></div>
+          <div className="rg-left">
+            <p className="section-label">WHAT WE MAKE</p>
 
-          {SLIDES.map((s, i) => (
-            <figure key={s.key} className={`rg-slide${i === active ? ' is-active' : ''}`}>
-              <svg
-                viewBox="0 0 420 280"
-                role="img"
-                aria-label={s.aria}
-                stroke="var(--cream)"
-                strokeWidth="2"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                {s.art}
-              </svg>
-              <figcaption>
-                <p className="rg-slide-label">{s.label}</p>
-                <p className="rg-caption">
-                  <Bracket />
-                  {s.caption}
-                  <Bracket flip />
-                </p>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
+            <div className="rg-tabs">
+              {SLIDES.map((s, i) => (
+                <button
+                  key={s.key}
+                  type="button"
+                  className={`rg-tab${i === active ? ' is-active' : ''}`}
+                  aria-expanded={i === active}
+                  onClick={() => jump(i)}
+                >
+                  <span className="rg-tab-row">
+                    <span className="rg-tab-num" aria-hidden="true">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <span className="rg-tab-title">{s.title}</span>
+                  </span>
+                  <span className="rg-tab-bodywrap">
+                    <span className="rg-tab-reveal">
+                      <span className="rg-tab-body">{s.body}</span>
+                      {i === active && (
+                        <span className="rg-tab-progress" aria-hidden="true">
+                          <span key={cycle} className="rg-tab-fill"></span>
+                        </span>
+                      )}
+                    </span>
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
 
-        <div className="rg-dots">
-          {SLIDES.map((s, i) => (
-            <button
-              key={s.key}
-              type="button"
-              className={`rg-dot${i === active ? ' is-active' : ''}`}
-              aria-label={`Show ${s.label.toLowerCase()} graphic`}
-              onClick={() => jump(i)}
-            >
-              {i === active && <span key={cycle} className="rg-dot-fill"></span>}
-            </button>
-          ))}
+          <div className="rg-stage" aria-live="off">
+            <div className="rg-glow" aria-hidden="true"></div>
+
+            {SLIDES.map((s, i) => (
+              <figure key={s.key} className={`rg-slide${i === active ? ' is-active' : ''}`}>
+                <svg
+                  viewBox="0 0 420 280"
+                  role="img"
+                  aria-label={s.aria}
+                  stroke="var(--cream)"
+                  strokeWidth="2"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  {s.art}
+                </svg>
+                <figcaption>
+                  <p className="rg-caption">
+                    <Bracket />
+                    {s.caption}
+                    <Bracket flip />
+                  </p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </div>
     </section>
