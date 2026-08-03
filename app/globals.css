@@ -1272,6 +1272,33 @@ html.js .animate-on-scroll.visible [data-stagger] > *:nth-child(n + 7) { transit
   from { opacity: 0; transform: translateY(30px); }
 }
 
+/* Rotating hero word — grid-stacked so width is reserved by the longest word */
+.rw {
+  display: inline-grid;
+  text-align: center;
+  overflow: hidden;
+  vertical-align: bottom;
+  /* room for descenders inside the clip box without shifting the line */
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+.rw-size {
+  grid-area: 1 / 1;
+  visibility: hidden;
+}
+.rw-word {
+  grid-area: 1 / 1;
+  display: inline-block;
+}
+.rw-word--in { animation: rw-in 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.rw-word--out { animation: rw-out 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) forwards; }
+@keyframes rw-in {
+  from { transform: translateY(115%); opacity: 0; }
+}
+@keyframes rw-out {
+  to { transform: translateY(-115%); opacity: 0; }
+}
+
 /* Lenis smooth scrolling */
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }

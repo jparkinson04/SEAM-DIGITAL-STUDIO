@@ -1,4 +1,5 @@
 import Logo from './Logo';
+import RotatingWord from './RotatingWord';
 
 export default function Hero() {
   return (
@@ -14,7 +15,7 @@ export default function Hero() {
         <Logo size="lg" as="h1" id="hero-title" style={{ color: 'var(--cream)' }} />
 
         <p className="hero-tagline">
-          Websites that look right, and sound right.
+          Your <RotatingWord />, all working together.
         </p>
 
         <p className="hero-sub">
