@@ -11,6 +11,7 @@ export const PROJECTS = [
     teaser:
       'A custom site for a wellness sanctuary 25 years in the making, designed and written around its clients.',
     scope: 'Website, branding + ongoing care',
+    badge: 'PREVIEW · LIVE SOON',
     image: '/bohemia-website.jpg',
     imageAlt: 'Bohemia Wellness website hero screenshot',
     detail: [
@@ -42,6 +43,29 @@ export const PROJECTS = [
         src: '/bohemia-instagram.jpg',
         alt: 'Bohemia Wellness Instagram feed embedded on the site',
       },
+    ],
+  },
+  {
+    slug: 'jbe-interiors',
+    name: 'JBE Interiors',
+    tag: 'REDESIGN',
+    title: 'An interiors specialist, redesigned around the work.',
+    teaser:
+      'A from-scratch redesign for a hospitality fit-out company, with a modern, sleek look and their best work front and centre.',
+    scope: 'Website, branding + ongoing maintenance',
+    liveUrl: 'https://www.jbeinteriors.com/',
+    image: '/jbe-website.jpg',
+    imageAlt: 'JBE Interiors website homepage',
+    detail: [
+      'JBE Interiors fit out restaurants and retail spaces across the UK. We redesigned their website from scratch, with a more modern, sleek look that lets the work speak for itself.',
+      'The site is built to showcase the previous work they are proud of. Their most recent and relevant projects are integrated throughout, with a new contact page so enquiries land in one place.',
+    ],
+    role: [
+      { title: 'Branding' },
+      { title: 'UX and UI design' },
+      { title: 'Website design and build' },
+      { title: 'Website hosting' },
+      { title: 'Website maintenance' },
     ],
   },
 ];

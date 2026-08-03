@@ -48,7 +48,7 @@ export default async function ProjectPage({ params }) {
               style={{ objectFit: 'cover', objectPosition: 'center top' }}
               priority
             />
-            <span className="case-study-soon-badge">PREVIEW · LIVE SOON</span>
+            {project.badge && <span className="case-study-soon-badge">{project.badge}</span>}
           </div>
 
           <div className="project-detail-grid">
@@ -68,6 +68,18 @@ export default async function ProjectPage({ params }) {
               {project.detail.map((para) => (
                 <p key={para}>{para}</p>
               ))}
+              {project.liveUrl && (
+                <p className="project-live-link">
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-arrow"
+                  >
+                    VISIT THE LIVE SITE <span aria-hidden="true">→</span>
+                  </a>
+                </p>
+              )}
             </div>
           </div>
         </RevealOnScroll>

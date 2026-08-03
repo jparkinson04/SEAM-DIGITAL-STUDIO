@@ -43,51 +43,35 @@ export default function WorkPage() {
 
       <section className="selected-work">
         <RevealOnScroll className="container">
-          {PROJECTS.map((p, i) => (
-            <div key={p.slug}>
-              <header className="selected-work-head">
-                <p className="section-label">CASE STUDY · {String(i + 1).padStart(2, '0')}</p>
-                <h2 className="section-headline">{p.name}.</h2>
-              </header>
+          <div className="work-grid">
+            {PROJECTS.map((p) => (
+              <Link key={p.slug} href={`/work/${p.slug}`} className="work-card" aria-label={`${p.name}, view project`}>
+                <div className="work-card-image" role="img" aria-label={p.imageAlt}>
+                  <Image
+                    src={p.image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 1000px) 100vw, 640px"
+                    style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                    priority={false}
+                  />
+                  {p.badge && <span className="case-study-soon-badge">{p.badge}</span>}
+                </div>
 
-              <Link href={`/work/${p.slug}`} className="case-study-link" aria-label={`${p.name}, view project`}>
-                <article className="case-study-card">
-                  <div
-                    className="case-study-cover case-study-cover--image"
-                    role="img"
-                    aria-label={p.imageAlt}
-                  >
-                    <Image
-                      src={p.image}
-                      alt=""
-                      fill
-                      sizes="(max-width: 1000px) 100vw, 620px"
-                      style={{ objectFit: 'cover', objectPosition: 'center top' }}
-                      priority={false}
-                    />
-                    <span className="case-study-soon-badge">PREVIEW · LIVE SOON</span>
-                  </div>
-
-                  <div className="case-study-meta">
-                    <p className="case-study-tag">{p.tag}</p>
-                    <h3 className="case-study-title">{p.title}</h3>
-                    <p className="case-study-body">{p.teaser}</p>
-
-                    <dl className="case-study-meta-list">
-                      <div>
-                        <dt>SCOPE</dt>
-                        <dd>{p.scope}</dd>
-                      </div>
-                    </dl>
-
-                    <span className="link-arrow">
-                      VIEW PROJECT <span aria-hidden="true">→</span>
-                    </span>
-                  </div>
-                </article>
+                <div className="work-card-body">
+                  <p className="case-study-tag">{p.tag}</p>
+                  <h2 className="work-card-title">{p.name}.</h2>
+                  <p className="work-card-teaser">{p.teaser}</p>
+                  <p className="work-card-scope">
+                    <span>SCOPE</span> {p.scope}
+                  </p>
+                  <span className="link-arrow">
+                    VIEW PROJECT <span aria-hidden="true">→</span>
+                  </span>
+                </div>
               </Link>
-            </div>
-          ))}
+            ))}
+          </div>
         </RevealOnScroll>
       </section>
 

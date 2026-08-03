@@ -991,29 +991,62 @@ section { padding: 120px 0; }
 
 /* PORTFOLIO — selected work ---------------------------------------------- */
 .selected-work { background: var(--cream); padding: 96px 0 64px; }
-.selected-work-head { margin-bottom: 36px; }
-.selected-work-head .section-headline {
-  font-size: 44px;
-}
-
-.case-study-card {
+/* Stacked project cards — image on top, text underneath */
+.work-grid {
   display: grid;
-  grid-template-columns: 6fr 5fr;
-  gap: 40px;
-  align-items: stretch;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.work-card {
+  display: flex;
+  flex-direction: column;
   background: var(--cream-2);
   border-radius: var(--radius-lg);
-  padding: 28px;
+  padding: 16px 16px 28px;
   box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-/* Whole card is a link on the /work listing */
-.case-study-link {
-  display: block;
-  border-radius: var(--radius-lg);
-  transition: transform 0.25s ease;
+.work-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.work-card-image {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--ink);
 }
-.case-study-link:hover { transform: translateY(-4px); }
-.case-study-link:hover .case-study-card { box-shadow: var(--shadow-lg); }
+.work-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 12px 0;
+  flex: 1;
+}
+.work-card-title {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+.work-card-teaser {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+  flex: 1;
+}
+.work-card-scope {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+.work-card-scope span {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.28em;
+  margin-right: 10px;
+}
+.work-card-body .link-arrow { margin-top: 4px; }
 .back-to-work { margin-top: 40px; }
 
 /* PROJECT DETAIL (subpage of /work) ------------------------------------- */
@@ -1085,114 +1118,12 @@ section { padding: 120px 0; }
   box-shadow: var(--shadow);
   background: var(--cream-2);
 }
-.case-study-cover {
-  display: block;
-  aspect-ratio: 4 / 3;
-  background: var(--ink);
-  color: var(--cream);
-  border-radius: var(--radius);
-  overflow: hidden;
-  position: relative;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.case-study-cover:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
-}
-.case-study-cover::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.05;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-.case-study-cover-inner {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 36px 32px;
-}
-.case-study-cover-label {
-  font-size: 28px;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  line-height: 1;
-}
-.case-study-cover-sub {
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.36em;
-  color: var(--muted-2);
-  margin-top: 6px;
-}
-.case-study-cover-cta {
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.22em;
-  color: var(--accent);
-  background: rgba(0, 64, 255, 0.12);
-  padding: 8px 14px;
-  border-radius: var(--radius-sm);
-  align-self: flex-start;
-}
-.case-study-meta {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 14px;
-  padding: 8px 8px 8px 16px;
-}
 .case-study-tag {
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.28em;
   color: var(--muted);
 }
-.case-study-title {
-  font-size: 32px;
-  font-weight: 900;
-  letter-spacing: -0.025em;
-  line-height: 1.12;
-}
-.case-study-body {
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--muted);
-}
-.case-study-meta-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin: 4px 0;
-  padding: 18px 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-.case-study-meta-list dt {
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.22em;
-  color: var(--muted);
-  margin-bottom: 4px;
-}
-.case-study-meta-list dd {
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: -0.005em;
-}
-
-/* When the cover holds a real photo — drop the noise overlay, drop hover lift */
-.case-study-cover--image {
-  cursor: default;
-  background: #e8dfd2;
-}
-.case-study-cover--image::before { display: none; }
-.case-study-cover--image:hover { transform: none; box-shadow: var(--shadow); }
-
 /* "Live soon" badge floating on the cover image */
 .case-study-soon-badge {
   position: absolute;
@@ -1346,15 +1277,12 @@ section { padding: 120px 0; }
   .pillars-grid { grid-template-columns: 1fr; gap: 16px; }
   .capabilities-grid { grid-template-columns: 1fr; gap: 16px; }
   .portfolio-soon-card { padding: 40px 28px; }
-  .case-study-card { grid-template-columns: 1fr; gap: 24px; padding: 20px; }
+  .work-grid { grid-template-columns: 1fr; gap: 20px; }
   .project-detail-grid { grid-template-columns: 1fr; gap: 40px; }
   .project-detail-grid .project-role { grid-column: 1; grid-row: 2; }
   .project-detail-grid .project-overview { grid-column: 1; grid-row: 1; }
   .project-detail-image { margin-bottom: 36px; }
   .project-gallery { margin-top: 56px; gap: 16px; }
-  .case-study-meta { padding: 8px; }
-  .case-study-title { font-size: 26px; }
-  .selected-work-head .section-headline { font-size: 32px; }
   .services-hero { padding: 56px 0 72px; }
   .services-hero-grid { grid-template-columns: 1fr; gap: 40px; }
   .services-hero-text .page-hero-title { font-size: 38px; }
