@@ -1149,6 +1149,25 @@ section { padding: 120px 0; }
 .portfolio-soon-card .section-headline { color: var(--cream); }
 .portfolio-soon-card .section-intro { color: var(--muted-2); max-width: 580px; }
 
+/* Solid CTA button — accent blue box by default */
+.btn-solid {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--accent);
+  color: var(--cream);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  padding: 18px 32px;
+  border-radius: var(--radius-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-solid:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
+.btn-solid .arrow { transition: transform 0.2s ease; }
+.btn-solid:hover .arrow { transform: translateX(3px); }
+
+/* Variant for dark surfaces — cream box, ink text */
 .btn-solid--ink {
   background: var(--cream);
   color: var(--ink);

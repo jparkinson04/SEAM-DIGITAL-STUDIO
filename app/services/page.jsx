@@ -45,7 +45,7 @@ export default function ServicesPage() {
                 Five things, done properly: branding, website design and creation, UI &amp; UX, hosting, and ongoing maintenance. All built around how your customers think and decide, with optional extras when you need them.
               </p>
               <div className="content-hero-ctas">
-                <a href="#contact" className="btn-solid btn-solid--ink">
+                <a href="#contact" className="btn-solid">
                   BOOK A DISCOVERY CALL <span className="arrow" aria-hidden="true">→</span>
                 </a>
                 <a href="#core" className="link-arrow">
