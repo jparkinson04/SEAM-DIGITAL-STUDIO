@@ -1272,23 +1272,47 @@ html.js .animate-on-scroll.visible [data-stagger] > *:nth-child(n + 7) { transit
   from { opacity: 0; transform: translateY(30px); }
 }
 
-/* Rotating hero word — grid-stacked so width is reserved by the longest word */
+/* Rotating hero word — container eases to each word's exact width */
 .rw {
-  display: inline-grid;
-  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  position: relative;
   overflow: hidden;
   vertical-align: bottom;
-  /* room for descenders inside the clip box without shifting the line */
-  padding-bottom: 0.08em;
-  margin-bottom: -0.08em;
+  transition: width 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+  /* room for descenders and the underline inside the clip box */
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
 }
-.rw-size {
-  grid-area: 1 / 1;
+/* Accent underline that stretches with the word */
+.rw::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+.rw-measure {
+  position: absolute;
   visibility: hidden;
+  white-space: nowrap;
+  pointer-events: none;
 }
+.rw-measure > span { display: inline-block; font-weight: 900; }
 .rw-word {
-  grid-area: 1 / 1;
   display: inline-block;
+  white-space: nowrap;
+  font-weight: 900;
+}
+.rw-word--out {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  text-align: center;
 }
 .rw-word--in { animation: rw-in 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
 .rw-word--out { animation: rw-out 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) forwards; }
