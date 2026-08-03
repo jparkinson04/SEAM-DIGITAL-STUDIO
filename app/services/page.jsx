@@ -42,7 +42,7 @@ export default function ServicesPage() {
               <p className="section-label">SERVICES</p>
               <h1 className="page-hero-title">A website that looks right, and sounds right.</h1>
               <p className="page-hero-sub">
-                Design, branding and messaging, built around how your customers think and decide. That is the core of every project. Everything else is an optional extra, there when you need it.
+                Five things, done properly: branding, website design and creation, UI &amp; UX, hosting, and ongoing maintenance. All built around how your customers think and decide, with optional extras when you need them.
               </p>
               <div className="content-hero-ctas">
                 <a href="#contact" className="btn-solid btn-solid--ink">

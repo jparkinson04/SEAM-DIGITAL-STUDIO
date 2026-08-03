@@ -142,15 +142,16 @@ export default function RotatingGraphics({ id, label = 'WHAT WE MAKE', detailed 
     return () => document.removeEventListener('visibilitychange', onVis);
   }, []);
 
-  // Auto-rotate; `cycle` restarts the hold after manual jumps or resume
+  // Auto-rotate; `cycle` restarts the hold after manual jumps or resume.
+  // The detailed variant is self-paced: no timer, reader clicks through.
   useEffect(() => {
-    if (paused) return undefined;
+    if (paused || detailed) return undefined;
     const t = setTimeout(() => {
       setActive((a) => (a + 1) % SLIDES.length);
       setCycle((c) => c + 1);
     }, HOLD_MS);
     return () => clearTimeout(t);
-  }, [active, paused, cycle]);
+  }, [active, paused, cycle, detailed]);
 
   const jump = (i) => {
     setActive(i);
@@ -158,7 +159,11 @@ export default function RotatingGraphics({ id, label = 'WHAT WE MAKE', detailed 
   };
 
   return (
-    <section id={id} className={`rg${paused ? ' is-paused' : ''}`} aria-label={label.toLowerCase()}>
+    <section
+      id={id}
+      className={`rg${paused ? ' is-paused' : ''}${detailed ? ' rg--static' : ''}`}
+      aria-label={label.toLowerCase()}
+    >
       <div className="container">
         <div
           className="rg-grid"
@@ -177,7 +182,8 @@ export default function RotatingGraphics({ id, label = 'WHAT WE MAKE', detailed 
                   key={s.key}
                   type="button"
                   className={`rg-tab${i === active ? ' is-active' : ''}`}
-                  aria-expanded={i === active}
+                  aria-expanded={detailed ? undefined : i === active}
+                  aria-current={detailed ? i === active : undefined}
                   onClick={() => jump(i)}
                 >
                   <span className="rg-tab-row">
@@ -189,7 +195,7 @@ export default function RotatingGraphics({ id, label = 'WHAT WE MAKE', detailed 
                   <span className="rg-tab-bodywrap">
                     <span className="rg-tab-reveal">
                       <span className="rg-tab-body">{detailed ? s.long : s.body}</span>
-                      {i === active && (
+                      {!detailed && i === active && (
                         <span className="rg-tab-progress" aria-hidden="true">
                           <span key={cycle} className="rg-tab-fill"></span>
                         </span>

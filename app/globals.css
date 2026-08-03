@@ -1297,6 +1297,12 @@ section { padding: 120px 0; }
   to { transform: scaleX(1); }
 }
 
+/* Static (detailed) variant — services page: everything open, self-paced */
+.rg--static .rg-tab-bodywrap { grid-template-rows: 1fr; }
+.rg--static .rg-tab-title { color: var(--cream); }
+.rg--static .rg-tab.is-active .rg-tab-num { color: var(--accent); }
+.rg--static .rg-tab-body { padding-bottom: 6px; }
+
 /* Stage (right) */
 .rg-stage {
   position: relative;
