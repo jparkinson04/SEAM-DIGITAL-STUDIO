@@ -406,179 +406,6 @@ section { padding: 120px 0; }
 }
 .service-preview-card .link-arrow { margin-top: 8px; }
 
-/* Primary card — the focus */
-.primary-service {
-  background: var(--ink);
-  color: var(--cream);
-  border-radius: var(--radius-lg);
-  padding: 56px 56px 48px;
-  box-shadow: var(--shadow-lg);
-  margin-bottom: 32px;
-  position: relative;
-  overflow: hidden;
-}
-.primary-service::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.04;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-.primary-service > * { position: relative; z-index: 1; }
-
-.primary-service .label-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-.primary-service .service-label-pill {
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.28em;
-  color: var(--cream);
-  background: rgba(242, 237, 230, 0.1);
-  padding: 6px 12px;
-  border-radius: 999px;
-}
-.primary-service .service-label-flag {
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.22em;
-  color: var(--muted-2);
-}
-
-.primary-service-title {
-  font-size: 36px;
-  font-weight: 900;
-  line-height: 1.12;
-  letter-spacing: -0.025em;
-  margin-bottom: 16px;
-  max-width: 740px;
-}
-.primary-service-body {
-  font-size: 17px;
-  line-height: 1.55;
-  color: var(--muted-2);
-  max-width: 640px;
-  margin-bottom: 36px;
-}
-
-.primary-service-features {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px 32px;
-  margin-bottom: 36px;
-}
-.primary-service-features li {
-  font-size: 15px;
-  line-height: 1.5;
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-}
-.primary-service-features li::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  background: currentColor;
-  border-radius: 50%;
-  flex-shrink: 0;
-  margin-top: 8px;
-  opacity: 0.55;
-}
-
-.primary-service-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  padding-top: 28px;
-  border-top: 1px solid var(--line-light);
-}
-.primary-service-meta {
-  font-size: 13px;
-  color: var(--muted-2);
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-.btn-solid {
-  background: var(--cream);
-  color: var(--ink);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.22em;
-  padding: 18px 28px;
-  border-radius: var(--radius-sm);
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  cursor: pointer;
-  transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
-}
-.btn-solid:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(242, 237, 230, 0.18); }
-.btn-solid .arrow { transition: transform 0.2s; }
-.btn-solid:hover .arrow { transform: translateX(3px); }
-
-/* Secondary card — Monthly Care */
-.secondary-service {
-  background: var(--cream-2);
-  border-radius: var(--radius);
-  padding: 32px 40px;
-  display: grid;
-  grid-template-columns: 5fr 6fr;
-  gap: 48px;
-  align-items: center;
-  box-shadow: var(--shadow-sm);
-  margin-bottom: 32px;
-}
-.secondary-service-head .service-card-label {
-  margin-bottom: 8px;
-}
-.secondary-service-title {
-  font-size: 24px;
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: -0.015em;
-  margin-bottom: 12px;
-}
-.secondary-service-body {
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--muted);
-}
-.secondary-service-right { display: flex; flex-direction: column; gap: 16px; }
-.secondary-service-features {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.secondary-service-features li {
-  font-size: 14px;
-  line-height: 1.5;
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  color: var(--ink);
-}
-.secondary-service-features li::before {
-  content: '';
-  width: 5px;
-  height: 5px;
-  background: var(--ink);
-  border-radius: 50%;
-  flex-shrink: 0;
-  margin-top: 9px;
-  opacity: 0.5;
-}
-.secondary-service-cta {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 4px;
-}
 .service-card-label {
   font-size: 11px;
   font-weight: 800;
@@ -596,11 +423,6 @@ section { padding: 120px 0; }
   color: var(--ink);
 }
 .link-arrow:hover { gap: 14px; }
-.secondary-service-meta {
-  font-size: 12px;
-  color: var(--muted);
-  font-weight: 600;
-}
 
 /* Content mention */
 .content-mention {
@@ -1121,99 +943,17 @@ section { padding: 120px 0; }
 }
 .mock-feature-line.short { width: 50%; opacity: 0.15; }
 
-/* Floating integration chips — visual proof of "everything connected" */
-.integration-chip {
-  position: absolute;
-  background: var(--cream);
-  padding: 8px 14px;
-  border-radius: 999px;
-  box-shadow: var(--shadow);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  z-index: 3;
-  opacity: 0;
-  animation: chip-appear 0.6s ease forwards;
-}
-.integration-chip::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex-shrink: 0;
-}
-@keyframes chip-appear {
-  to { opacity: 1; }
-}
-
-.integration-chip--booking {
-  top: 4%;
-  right: -14px;
-  animation: chip-appear 0.6s ease forwards 0.7s, chip-float-1 5s ease-in-out infinite 1.3s;
-}
-.integration-chip--fresha {
-  top: 6%;
-  left: -16px;
-  animation: chip-appear 0.6s ease forwards 0.85s, chip-float-4 5.4s ease-in-out infinite 1.45s;
-}
-.integration-chip--reviews {
-  top: 44%;
-  left: -22px;
-  animation: chip-appear 0.6s ease forwards 0.95s, chip-float-2 5.6s ease-in-out infinite 1.55s;
-}
-.integration-chip--tiktok {
-  bottom: 18%;
-  left: -12px;
-  animation: chip-appear 0.6s ease forwards 1.05s, chip-float-5 4.7s ease-in-out infinite 1.7s;
-}
-.integration-chip--social {
-  bottom: 4%;
-  right: 6%;
-  animation: chip-appear 0.6s ease forwards 1.15s, chip-float-3 4.9s ease-in-out infinite 1.8s;
-}
-@keyframes chip-float-1 {
-  0%, 100% { transform: rotate(2deg) translateY(0); }
-  50%      { transform: rotate(2deg) translateY(-7px); }
-}
-@keyframes chip-float-2 {
-  0%, 100% { transform: rotate(-3deg) translateY(0); }
-  50%      { transform: rotate(-3deg) translateY(-5px); }
-}
-@keyframes chip-float-3 {
-  0%, 100% { transform: rotate(1.5deg) translateY(0); }
-  50%      { transform: rotate(1.5deg) translateY(-8px); }
-}
-@keyframes chip-float-4 {
-  0%, 100% { transform: rotate(-2deg) translateY(0); }
-  50%      { transform: rotate(-2deg) translateY(-6px); }
-}
-@keyframes chip-float-5 {
-  0%, 100% { transform: rotate(2.5deg) translateY(0); }
-  50%      { transform: rotate(2.5deg) translateY(-6px); }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .browser-mock { opacity: 1; transform: none; animation: none; }
   .mock-cta::after { animation: none; opacity: 0.5; }
-  .integration-chip { opacity: 1; animation: none; }
-  .integration-chip--booking { transform: rotate(2deg); }
-  .integration-chip--fresha  { transform: rotate(-2deg); }
-  .integration-chip--reviews { transform: rotate(-3deg); }
-  .integration-chip--tiktok  { transform: rotate(2.5deg); }
-  .integration-chip--social  { transform: rotate(1.5deg); }
 }
 
 /* SERVICES DETAIL (subpage) ---------------------------------------------- */
 .services-detail { background: var(--cream); padding: 96px 0 120px; }
-.services-detail .content-mention {
-  border-top: 1px solid var(--line);
-  margin-top: 32px;
-  padding-top: 32px;
-}
+
+/* SERVICES — what else tiles */
+.services-more { background: var(--cream-2); padding: 96px 0; }
+.services-more .pillar-card { background: var(--cream); }
 
 /* PILLARS GRID (used by /content and /about) ----------------------------- */
 .pillars-grid {
@@ -1266,6 +1006,15 @@ section { padding: 120px 0; }
   padding: 28px;
   box-shadow: var(--shadow);
 }
+/* Whole card is a link on the /work listing */
+.case-study-link {
+  display: block;
+  border-radius: var(--radius-lg);
+  transition: transform 0.25s ease;
+}
+.case-study-link:hover { transform: translateY(-4px); }
+.case-study-link:hover .case-study-card { box-shadow: var(--shadow-lg); }
+.back-to-work { margin-top: 40px; }
 .case-study-cover {
   display: block;
   aspect-ratio: 4 / 3;
@@ -1526,11 +1275,6 @@ section { padding: 120px 0; }
   .services-preview-grid { grid-template-columns: 1fr; gap: 16px; }
   .pillars-grid { grid-template-columns: 1fr; gap: 16px; }
   .capabilities-grid { grid-template-columns: 1fr; gap: 16px; }
-  .primary-service { padding: 40px 32px; }
-  .primary-service-title { font-size: 28px; }
-  .primary-service-features { grid-template-columns: 1fr; gap: 12px; }
-  .primary-service-footer { flex-direction: column; align-items: flex-start; gap: 16px; }
-  .secondary-service { grid-template-columns: 1fr; gap: 24px; padding: 28px; }
   .portfolio-soon-card { padding: 40px 28px; }
   .case-study-card { grid-template-columns: 1fr; gap: 24px; padding: 20px; }
   .case-study-meta { padding: 8px; }
@@ -1540,12 +1284,6 @@ section { padding: 120px 0; }
   .services-hero-grid { grid-template-columns: 1fr; gap: 40px; }
   .services-hero-text .page-hero-title { font-size: 38px; }
   .services-visual { padding: 16px 8px; }
-  .integration-chip { font-size: 10px; padding: 6px 11px; }
-  .integration-chip--booking { top: 2%; right: -8px; }
-  .integration-chip--fresha  { top: 4%; left: -8px; }
-  .integration-chip--reviews { left: -8px; }
-  .integration-chip--tiktok  { left: -8px; }
-  .integration-chip--social  { right: 4%; }
 }
 
 @media (max-width: 900px) {

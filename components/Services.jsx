@@ -3,15 +3,21 @@ import RevealOnScroll from './RevealOnScroll';
 
 const PREVIEWS = [
   {
-    label: 'THE FULL SETUP',
-    title: 'Everything you need to look professional and start booking.',
-    body: 'A complete digital foundation, built around your brand, your story, and your customers.',
+    label: 'WEBSITE DESIGN AND BUILD',
+    title: 'Fast, modern sites, designed around your customers.',
+    body: 'Built for how real people browse and decide, not just for looks. Clear, quick, and easy to act on.',
     href: '/services',
   },
   {
-    label: 'MONTHLY CARE',
-    title: 'Ongoing maintenance, without the hassle.',
-    body: 'Updates, fixes and improvements, all handled by one trusted contact.',
+    label: 'BRANDING',
+    title: 'A look that fits, everywhere it shows up.',
+    body: 'Logo, colours and visual identity, with the assets to use them consistently across your site and socials.',
+    href: '/services',
+  },
+  {
+    label: 'MESSAGING AND STORYTELLING',
+    title: 'The right words, for the right people.',
+    body: 'Copy and positioning shaped by user psychology. Your story, told so your customers see themselves in it.',
     href: '/services',
   },
 ];
@@ -23,10 +29,10 @@ export default function Services() {
         <header className="services-head">
           <p className="section-label">WHAT I DO</p>
           <h2 id="services-title" className="section-headline">
-            Your full digital setup, sorted.
+            The website, the look, the words.
           </h2>
           <p className="section-intro">
-            Two services that work together, or stand alone.
+            Three things, done properly. Everything else is optional.
           </p>
         </header>
       </RevealOnScroll>
@@ -44,6 +50,11 @@ export default function Services() {
             </Link>
           ))}
         </div>
+
+        <p className="content-mention">
+          <strong>Need more than that?</strong> Bookings, reviews, social content, shoots, email and ongoing care are all on offer too.{' '}
+          <Link href="/services#more">See what else I can do</Link>.
+        </p>
       </RevealOnScroll>
     </section>
   );

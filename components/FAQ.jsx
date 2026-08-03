@@ -5,16 +5,16 @@ import RevealOnScroll from './RevealOnScroll';
 
 const ITEMS = [
   {
-    q: 'How long does the setup take?',
+    q: 'How long does a website take?',
     a: "Around two weeks from discovery call to live site, in most cases. You'll get a firm timeline upfront so you know exactly when you're going live.",
   },
   {
     q: 'Who do you work with?',
-    a: "Independent business owners and small teams whose digital setup isn't pulling its weight. Anyone from a beauty studio or wellness practitioner to a freelance specialist, a small services firm, or a one-person shop. Mostly based within an hour of Doncaster, but I work remotely with clients further afield too.",
+    a: "Independent business owners and small teams whose website isn't pulling its weight. Anyone from a beauty studio or wellness practitioner to a freelance specialist, a small services firm, or a one-person shop. Mostly based within an hour of Doncaster, but I work remotely with clients further afield too.",
   },
   {
     q: 'What if I already have a website?',
-    a: "If your existing site works for you, great. I can connect everything else around it. If it isn't pulling its weight, I'll build something that does. The discovery call covers exactly this.",
+    a: "If your existing site works for you, great. I can help with the branding, messaging and extras around it. If it isn't pulling its weight, I'll build something that does. The discovery call covers exactly this.",
   },
   {
     q: 'Am I locked into the monthly retainer?',

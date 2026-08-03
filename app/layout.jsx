@@ -13,9 +13,9 @@ const inter = Inter({
 
 export const metadata = {
   metadataBase: new URL('https://seamdigitalstudio.com'),
-  title: 'Seam Digital Studio, the complete digital setup for small businesses',
+  title: 'Seam Digital Studio, websites, branding and messaging for small businesses',
   description:
-    'A complete digital setup for small businesses. Website, bookings, reviews and content, all connected and working together. Based in Doncaster.',
+    'Websites that look right, sound right, and are built around how your customers actually think. Website design, branding and messaging for small businesses, based in Doncaster.',
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
@@ -25,7 +25,7 @@ export const metadata = {
     type: 'website',
     title: 'Seam Digital Studio',
     description:
-      'A complete digital setup for small businesses. Website, bookings, reviews and content, all connected.',
+      'Website design, branding and messaging for small businesses. Built around your story, and how your customers actually think.',
     url: 'https://seamdigitalstudio.com',
     siteName: 'Seam Digital Studio',
   },

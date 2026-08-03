@@ -14,11 +14,11 @@ export default function Hero() {
         <Logo size="lg" as="h1" id="hero-title" style={{ color: 'var(--cream)' }} />
 
         <p className="hero-tagline">
-          Your full digital setup, in one place.
+          Websites that look right, and sound right.
         </p>
 
         <p className="hero-sub">
-          Website, bookings, reviews and content. Built around your business. Working together from day one.
+          Website design, branding and messaging for small businesses. Built around your story, and how your customers actually think.
         </p>
 
         <div className="hero-btns">

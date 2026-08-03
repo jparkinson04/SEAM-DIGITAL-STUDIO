@@ -4,7 +4,7 @@ import RevealOnScroll from '@/components/RevealOnScroll';
 export const metadata = {
   title: 'About, Seam Digital Studio',
   description:
-    'Jessie, founder of Seam Digital Studio. A background in marketing and psychology, building digital setups that work for the people who run them.',
+    'Jessie, founder of Seam Digital Studio. A background in marketing and psychology, building websites, brands and messaging that work for the people who run them.',
 };
 
 const PILLARS = [
@@ -18,7 +18,7 @@ const PILLARS = [
   },
   {
     title: 'ALL SEAMED TOGETHER',
-    body: 'Website, booking, social, reviews. One system, not six separate tools.',
+    body: 'Design, branding and words working as one, so everything feels like it came from you.',
   },
   {
     title: 'BUILT TO BE FOUND',
@@ -33,7 +33,7 @@ export default function AboutPage() {
         <RevealOnScroll className="container">
           <p className="section-label">ABOUT</p>
           <h1 className="page-hero-title">
-            I build digital setups that work for the people who run them.
+            I build websites that work for the people who run them.
           </h1>
         </RevealOnScroll>
       </section>
@@ -58,21 +58,21 @@ export default function AboutPage() {
                   I built Seam because small businesses deserve a digital presence that actually works for them, not against them.
                 </p>
                 <p>
-                  Running a small business is full-on. You&apos;re delivering your service, building client relationships, managing the day-to-day, and somewhere in between, you&apos;re supposed to be keeping your website updated, staying consistent on social media, chasing reviews, and making sure your booking system doesn&apos;t let anyone fall through the cracks.
+                  Running a small business is full-on. You&apos;re delivering your service, building client relationships, managing the day-to-day, and somewhere in between, you&apos;re supposed to be keeping your website updated, staying consistent on social media, chasing reviews, and making sure no enquiry falls through the cracks.
                 </p>
                 <p>
-                  I know that feeling well. And I know the usual answer. A website here, an Instagram there, a booking tool bolted on. It ends up feeling scattered. Nothing talks to each other. Nothing feels like you.
+                  I know that feeling well. And I know the usual answer. A website from years ago, an Instagram that doesn&apos;t match it, words written in a hurry. It ends up feeling scattered. Nothing matches. Nothing sounds like you.
                 </p>
                 <p>
-                  <strong>I&apos;m Jessie.</strong> I come from a background in marketing and psychology, and what that taught me is simple. A great digital setup isn&apos;t about looking good, or having the right tools. It&apos;s about understanding people. Your customers. How they find you, what builds their trust, what makes them come back.
+                  <strong>I&apos;m Jessie.</strong> I come from a background in marketing and psychology, and what that taught me is simple. A great website isn&apos;t about looking good, or having the right tools. It&apos;s about understanding people. Your customers. How they find you, what builds their trust, what makes them come back.
                 </p>
                 <p>
-                  That&apos;s the lens I bring to every project. I think about your story, your vision, your voice, why you do what you do, and I build a digital system that tells it clearly. Then I think about your customers, how they&apos;ll actually use it, what they need to feel confident booking with you, and how to make that journey feel seamless from the moment they discover you.
+                  That&apos;s the lens I bring to every project. I think about your story, your vision, your voice, why you do what you do, and I build a website that tells it clearly. Then I think about your customers, how they&apos;ll actually use it, what they need to feel confident choosing you, and how to make that journey feel seamless from the moment they discover you.
                 </p>
               </div>
 
               <p className="about-pullquote">
-                Everything connected. Everything intentional. Nothing left to chance.
+                Everything considered. Everything intentional. Nothing left to chance.
               </p>
 
               <div className="founder-card">

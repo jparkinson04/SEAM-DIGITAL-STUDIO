@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og';
 
-export const alt = 'Seam Digital Studio, the complete digital setup for small businesses';
+export const alt = 'Seam Digital Studio, websites, branding and messaging for small businesses';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -103,7 +103,7 @@ export default async function Image() {
             color: 'rgba(242, 237, 230, 0.6)',
           }}
         >
-          Your full digital setup, in one place.
+          Websites that look right, and sound right.
         </div>
       </div>
     ),

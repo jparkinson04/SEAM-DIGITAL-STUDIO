@@ -13,7 +13,7 @@ export default function Footer() {
               <Logo size="sm" style={{ color: 'var(--cream)' }} />
             </Link>
             <p style={{ marginTop: 20 }}>
-              The complete digital setup for small businesses. Based in Doncaster, working with clients across the UK.
+              Websites, branding and messaging for small businesses. Based in Doncaster, working with clients across the UK.
             </p>
           </div>
 
@@ -21,7 +21,7 @@ export default function Footer() {
             <h5>NAVIGATE</h5>
             <ul>
               <li><Link href="/services">Services</Link></li>
-              <li><Link href="/portfolio">Portfolio</Link></li>
+              <li><Link href="/work">Work</Link></li>
               <li><Link href="/about">About</Link></li>
             </ul>
           </div>
@@ -29,9 +29,10 @@ export default function Footer() {
           <div className="footer-col">
             <h5>SERVICES</h5>
             <ul>
-              <li><Link href="/services">The Full Setup</Link></li>
-              <li><Link href="/services">Monthly Care</Link></li>
-              <li><a href="#contact">Book a call</a></li>
+              <li><Link href="/services">Website design and build</Link></li>
+              <li><Link href="/services">Branding</Link></li>
+              <li><Link href="/services">Messaging and storytelling</Link></li>
+              <li><Link href="/services#more">Everything else</Link></li>
             </ul>
           </div>
 

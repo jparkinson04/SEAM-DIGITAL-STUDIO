@@ -9,7 +9,7 @@ const STEPS = [
   {
     num: '02',
     title: 'BUILD',
-    body: 'I design and build the full setup. You stay in the loop, but I handle the work. No back-and-forth.',
+    body: 'I design and build the site, the brand and the words. You stay in the loop, but I handle the work. No back-and-forth.',
   },
   {
     num: '03',

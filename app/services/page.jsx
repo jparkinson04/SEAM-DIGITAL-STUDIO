@@ -4,45 +4,73 @@ import HowItWorks from '@/components/HowItWorks';
 export const metadata = {
   title: 'Services, Seam Digital Studio',
   description:
-    'The Full Setup and Monthly Care. A complete digital setup for small businesses, built around your brand and your customers.',
+    'Website design and build, branding, and messaging shaped by user psychology. The core of every Seam project, with optional extras when you need them.',
 };
 
-const FULL_SETUP_FEATURES = [
-  'Custom website design and build',
-  'Booking system integration',
-  'Customer reviews',
-  'Integrated social media',
-  'On-brand copywriting throughout',
-  'Mobile optimised',
-  'Hosting and domain support',
+const CORE_SERVICES = [
+  {
+    label: 'WEBSITE DESIGN AND BUILD',
+    title: 'Fast, modern sites, designed around your customers.',
+    body: 'Designed around how your customers actually browse and decide, not just how things look. Quick to load, easy to navigate, clear about what to do next. Mobile first, with hosting and domain support handled.',
+  },
+  {
+    label: 'BRANDING',
+    title: 'A visual identity that fits who you are.',
+    body: 'Logo, colours and type, plus the assets to use them consistently. So everything you put out, from your site to your socials, looks like it came from the same place.',
+  },
+  {
+    label: 'MESSAGING AND STORYTELLING',
+    title: 'Copy that says the right thing to the right people.',
+    body: 'Positioning and copywriting shaped by user psychology. Your story and your voice, structured around how customers read, build trust and decide.',
+  },
 ];
 
-const MONTHLY_CARE_FEATURES = [
-  'Updates and changes whenever you need',
-  'New sections or pages added',
-  'Technical maintenance and hosting',
-  'One point of contact, no faff',
+const EXTRAS = [
+  {
+    title: 'BOOKING SYSTEMS',
+    body: 'Online booking set up and connected to your site, for businesses that take appointments. Customers book themselves in, and nothing falls through the cracks.',
+  },
+  {
+    title: 'GOOGLE REVIEWS AND LOCAL SEO',
+    body: 'Review collection set up and running quietly in the background, plus the local search basics done properly. So nearby customers can find you, and trust what they find.',
+  },
+  {
+    title: 'SOCIAL MEDIA CONTENT',
+    body: 'A simple, consistent posting approach with content made for your audience. Captions, visuals and a rhythm you can actually keep up with.',
+  },
+  {
+    title: 'CONTENT SHOOTS',
+    body: 'Photo and video captured on location at your business. Real imagery of you and your work, ready for your site and your socials.',
+  },
+  {
+    title: 'EMAIL AND NEWSLETTERS',
+    body: 'Regular emails that keep customers coming back, written in your voice. Simple to run, easy to read, and never spammy.',
+  },
+  {
+    title: 'ONGOING CARE',
+    body: 'Updates, tweaks and support after launch, so the site keeps working for you. One point of contact, no faff.',
+  },
 ];
 
 export default function ServicesPage() {
   return (
     <>
-      {/* Combined hero with browser mockup + floating integration chips */}
+      {/* Combined hero with browser mockup */}
       <section className="services-hero">
         <RevealOnScroll className="container">
           <div className="services-hero-grid">
             <div className="services-hero-text">
               <p className="section-label">SERVICES</p>
-              <h1 className="page-hero-title">A digital setup that talks to itself.</h1>
+              <h1 className="page-hero-title">A website that looks right, and sounds right.</h1>
               <p className="page-hero-sub">
-                One website, fully connected. Bookings, reviews, social, and content, all working from the same brain. Built once, kept growing.
+                Design, branding and messaging, built around how your customers think and decide. That is the core of every project. Everything else is an optional extra, there when you need it.
               </p>
               <div className="content-hero-ctas">
                 <a href="#contact" className="btn-solid btn-solid--ink">
                   BOOK A DISCOVERY CALL <span className="arrow" aria-hidden="true">→</span>
                 </a>
-                <a href="#full-setup" className="link-arrow">
-                  SEE WHAT&apos;S INSIDE <span aria-hidden="true">↓</span>
+                <a href="#core" className="link-arrow">
+                  SEE THE CORE OFFER <span aria-hidden="true">↓</span>
                 </a>
               </div>
             </div>
@@ -67,7 +95,7 @@ export default function ServicesPage() {
                       <span></span>
                       <span></span>
                     </div>
-                    <div className="mock-cta">BOOK</div>
+                    <div className="mock-cta">HELLO</div>
                   </div>
 
                   <div className="mock-hero">
@@ -99,74 +127,51 @@ export default function ServicesPage() {
                   </div>
                 </div>
               </div>
-
-              {/* Floating integration chips — visual proof of "everything connected" */}
-              <div className="integration-chip integration-chip--booking">Ticket Tailor</div>
-              <div className="integration-chip integration-chip--fresha">Fresha</div>
-              <div className="integration-chip integration-chip--reviews">5.0 ★ Reviews</div>
-              <div className="integration-chip integration-chip--tiktok">TikTok</div>
-              <div className="integration-chip integration-chip--social">@ Instagram</div>
             </div>
           </div>
         </RevealOnScroll>
       </section>
 
-      <section className="services-detail" id="full-setup">
+      <section className="services-detail" id="core">
         <RevealOnScroll className="container">
-          <article className="primary-service">
-            <div className="label-row">
-              <span className="service-label-pill">THE FULL SETUP</span>
-              <span className="service-label-flag">ONE-TIME BUILD</span>
-            </div>
-
-            <h2 className="primary-service-title">
-              Everything you need to look professional, capture leads, and start booking.
-            </h2>
-            <p className="primary-service-body">
-              Built around your brand, your story, and your customers. The full foundation, designed to work together from day one, not bolted on as you go.
+          <header className="services-head">
+            <p className="section-label">THE CORE OFFER</p>
+            <h2 className="section-headline">What every project is built on.</h2>
+            <p className="section-intro">
+              Three services that work together, or stand alone.
             </p>
+          </header>
 
-            <ul className="primary-service-features">
-              {FULL_SETUP_FEATURES.map((f) => (
-                <li key={f}>{f}</li>
-              ))}
-            </ul>
+          <div className="services-preview-grid">
+            {CORE_SERVICES.map((s) => (
+              <article key={s.label} className="service-preview-card">
+                <p className="service-card-label">{s.label}</p>
+                <h3 className="service-preview-title">{s.title}</h3>
+                <p className="service-preview-body">{s.body}</p>
+              </article>
+            ))}
+          </div>
+        </RevealOnScroll>
+      </section>
 
-            <div className="primary-service-footer">
-              <p className="primary-service-meta">One-time · 50% up front, 50% on completion</p>
-              <a href="#contact" className="btn-solid">
-                ENQUIRE FOR A QUOTE <span className="arrow" aria-hidden="true">→</span>
-              </a>
-            </div>
-          </article>
+      <section className="services-more" id="more">
+        <RevealOnScroll className="container">
+          <header className="services-head">
+            <p className="section-label">BEYOND THE CORE</p>
+            <h2 className="section-headline">What else I can offer.</h2>
+            <p className="section-intro">
+              Add-ons that build on the core when they earn their place. Take what is useful, skip what is not.
+            </p>
+          </header>
 
-          <article className="secondary-service">
-            <div className="secondary-service-head">
-              <p className="service-card-label">PAIR WITH · MONTHLY CARE</p>
-              <h2 className="secondary-service-title">Keep it growing.</h2>
-              <p className="secondary-service-body">
-                Your website kept current, technically sound, and quietly improving. Without you having to think about it.
-              </p>
-            </div>
-            <div className="secondary-service-right">
-              <ul className="secondary-service-features">
-                {MONTHLY_CARE_FEATURES.map((f) => (
-                  <li key={f}>{f}</li>
-                ))}
-              </ul>
-              <div className="secondary-service-cta">
-                <a href="#contact" className="link-arrow">
-                  ENQUIRE <span aria-hidden="true">→</span>
-                </a>
-                <p className="secondary-service-meta">Rolling monthly · cancel anytime</p>
-              </div>
-            </div>
-          </article>
-
-          <p className="content-mention">
-            <strong>Also offering content support.</strong> Captions, visuals, and a posting rhythm built around your goals.{' '}
-            <a href="#contact">Get in touch to find out more</a>.
-          </p>
+          <div className="pillars-grid">
+            {EXTRAS.map((e) => (
+              <article key={e.title} className="pillar-card">
+                <h3 className="pillar-title">{e.title}</h3>
+                <p className="pillar-body">{e.body}</p>
+              </article>
+            ))}
+          </div>
         </RevealOnScroll>
       </section>
 
