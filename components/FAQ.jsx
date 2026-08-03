@@ -10,7 +10,7 @@ const ITEMS = [
   },
   {
     q: 'Who do you work with?',
-    a: "Independent business owners and small teams whose website isn't pulling its weight. Anyone from a beauty studio or wellness practitioner to a freelance specialist, a small services firm, or a one-person shop. Mostly based within an hour of Doncaster, but I work remotely with clients further afield too.",
+    a: "A lot of joinery, interior and trade businesses, alongside other independent business owners whose website isn't pulling its weight. We work with clients anywhere, but we're especially at home with businesses local to Doncaster and the surrounding areas.",
   },
   {
     q: 'What if I already have a website?',

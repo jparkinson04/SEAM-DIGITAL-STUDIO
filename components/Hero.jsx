@@ -26,7 +26,7 @@ export default function Hero() {
             BOOK A DISCOVERY CALL <span className="arrow" aria-hidden="true">→</span>
           </a>
           <a href="/services" className="btn btn-outline">
-            SEE WHAT I DO
+            SEE WHAT WE DO
           </a>
         </div>
       </div>
