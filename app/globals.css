@@ -370,41 +370,6 @@ section { padding: 120px 0; }
 .services-head .section-label { justify-content: center; }
 .services-head .section-intro { margin: 0 auto; }
 
-/* 3-card preview row on home */
-.services-preview-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-.service-preview-card {
-  background: var(--cream-2);
-  border-radius: var(--radius);
-  padding: 36px 32px 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: var(--shadow-sm);
-}
-.service-preview-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow);
-}
-.service-preview-title {
-  font-size: 22px;
-  font-weight: 800;
-  line-height: 1.22;
-  letter-spacing: -0.015em;
-  margin-top: 4px;
-}
-.service-preview-body {
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--muted);
-  flex: 1;
-}
-.service-preview-card .link-arrow { margin-top: 8px; }
-
 .service-card-label {
   font-size: 11px;
   font-weight: 800;
@@ -932,7 +897,6 @@ section { padding: 120px 0; }
 }
 
 /* SERVICES DETAIL (subpage) ---------------------------------------------- */
-.services-detail { background: var(--cream); padding: 96px 0 120px; }
 
 /* SERVICES — what else tiles */
 .services-more { background: var(--cream-2); padding: 96px 0; }
@@ -1443,7 +1407,6 @@ section { padding: 120px 0; }
   .about-text .section-headline { font-size: 36px; }
   .section-headline { font-size: 44px; }
   .page-hero-title { font-size: 44px; }
-  .services-preview-grid { grid-template-columns: 1fr; gap: 16px; }
   .pillars-grid { grid-template-columns: 1fr; gap: 16px; }
   .capabilities-grid { grid-template-columns: 1fr; gap: 16px; }
   .portfolio-soon-card { padding: 40px 28px; }

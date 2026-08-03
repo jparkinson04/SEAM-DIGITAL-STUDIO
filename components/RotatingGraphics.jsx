@@ -9,6 +9,7 @@ const SLIDES = [
     key: 'branding',
     title: 'Branding',
     body: 'Logo, colours and type, with the assets to use them consistently. A look that fits who you are, everywhere it shows up.',
+    long: 'Logo, colours and type, designed from scratch or tidied up from what you already have. You get the assets and simple guidelines to use them consistently, so your site, socials and everything in between look like the same company.',
     caption: 'A brand that holds together.',
     aria: 'Line drawing of a brand board with a logo circle, colour swatches and typography rules',
     art: (
@@ -29,6 +30,7 @@ const SLIDES = [
     key: 'web',
     title: 'Website design and creation',
     body: 'Fast, modern sites designed around how your customers browse and decide. Built from scratch, made to look right on every screen.',
+    long: 'A fast, modern site built from scratch around how your customers actually browse and decide. Written and structured so the next step is always obvious, mobile first, quick to load, and easy to grow as your business does.',
     caption: 'One website. Every screen.',
     aria: 'Line drawing of a laptop, tablet and phone all showing the same simple website layout',
     art: (
@@ -53,6 +55,7 @@ const SLIDES = [
     key: 'uiux',
     title: 'UI & UX',
     body: 'Layouts, journeys and the little details, shaped by user psychology. Easy to navigate, and always clear about what to do next.',
+    long: 'The layouts, journeys and little details, shaped by user psychology. We plan how people move through the site, what they see first and where they go next, so visitors find what they need and turn into enquiries.',
     caption: 'Designed around real people.',
     aria: 'Line drawing of a browser window wireframe with a cursor clicking a button',
     art: (
@@ -75,6 +78,7 @@ const SLIDES = [
     key: 'hosting',
     title: 'Hosting',
     body: 'Your site kept fast, secure and online, with domains and the technical bits handled. One less thing to think about.',
+    long: 'Your site kept fast, secure and online. Domains, security certificates and the technical setup all handled under one roof, with plain answers instead of jargon and one point of contact when you need something.',
     caption: 'Fast, secure, always on.',
     aria: 'Line drawing of a stack of servers with status lights and a signal above',
     art: (
@@ -99,6 +103,7 @@ const SLIDES = [
     key: 'care',
     title: 'Ongoing maintenance',
     body: 'Updates, tweaks and support after launch, so the site keeps improving without you having to think about it.',
+    long: 'Updates, tweaks and support after launch, on a simple rolling basis. New sections, fresh content and technical upkeep, all handled quietly in the background, so the site keeps improving without you having to think about it.',
     caption: 'Kept sharp, long after launch.',
     aria: 'Line drawing of a circular refresh arrow around a tick mark',
     art: (
@@ -125,7 +130,7 @@ function Bracket({ flip = false }) {
   );
 }
 
-export default function RotatingGraphics() {
+export default function RotatingGraphics({ id, label = 'WHAT WE MAKE', detailed = false }) {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const [cycle, setCycle] = useState(0);
@@ -153,7 +158,7 @@ export default function RotatingGraphics() {
   };
 
   return (
-    <section className={`rg${paused ? ' is-paused' : ''}`} aria-label="What we make">
+    <section id={id} className={`rg${paused ? ' is-paused' : ''}`} aria-label={label.toLowerCase()}>
       <div className="container">
         <div
           className="rg-grid"
@@ -164,7 +169,7 @@ export default function RotatingGraphics() {
           }}
         >
           <div className="rg-left">
-            <p className="section-label">WHAT WE MAKE</p>
+            <p className="section-label">{label}</p>
 
             <div className="rg-tabs">
               {SLIDES.map((s, i) => (
@@ -183,7 +188,7 @@ export default function RotatingGraphics() {
                   </span>
                   <span className="rg-tab-bodywrap">
                     <span className="rg-tab-reveal">
-                      <span className="rg-tab-body">{s.body}</span>
+                      <span className="rg-tab-body">{detailed ? s.long : s.body}</span>
                       {i === active && (
                         <span className="rg-tab-progress" aria-hidden="true">
                           <span key={cycle} className="rg-tab-fill"></span>
