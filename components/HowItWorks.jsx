@@ -35,7 +35,7 @@ export default function HowItWorks() {
           A clear, structured process so you always know exactly where things stand.
         </p>
 
-        <ol className="how-grid">
+        <ol className="how-grid" data-stagger>
           {STEPS.map((step) => (
             <li key={step.num} className="how-card">
               <div className="how-num" aria-hidden="true">{step.num}</div>

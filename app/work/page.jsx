@@ -43,7 +43,7 @@ export default function WorkPage() {
 
       <section className="selected-work">
         <RevealOnScroll className="container">
-          <div className="work-grid">
+          <div className="work-grid" data-stagger>
             {PROJECTS.map((p) => (
               <Link key={p.slug} href={`/work/${p.slug}`} className="work-card" aria-label={`${p.name}, view project`}>
                 <div className="work-card-image" role="img" aria-label={p.imageAlt}>
@@ -98,7 +98,7 @@ export default function WorkPage() {
             <h2 className="section-headline">Capabilities.</h2>
           </header>
 
-          <div className="capabilities-grid">
+          <div className="capabilities-grid" data-stagger>
             {CAPABILITIES.map((c) => (
               <article key={c.label} className="capability-card">
                 <p className="service-card-label">{c.label}</p>

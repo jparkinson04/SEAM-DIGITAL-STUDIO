@@ -3,6 +3,8 @@ import './globals.css';
 import Nav from '@/components/Nav';
 import CTABand from '@/components/CTABand';
 import Footer from '@/components/Footer';
+import SmoothScroll from '@/components/SmoothScroll';
+import CustomCursor from '@/components/CustomCursor';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -35,6 +37,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.variable}>
       <body>
+        {/* Marks JS as available so reveal start-states only hide content when they can animate */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+        <SmoothScroll />
+        <CustomCursor />
         <Nav />
         <main id="top">{children}</main>
         <CTABand />

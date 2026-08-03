@@ -34,7 +34,7 @@ export default function FAQ() {
           Things people actually ask.
         </h2>
 
-        <div className="faq-list">
+        <div className="faq-list" data-stagger>
           {ITEMS.map((item, i) => {
             const isOpen = openIndex === i;
             return (

@@ -93,7 +93,7 @@ export default function AboutPage() {
             <h2 className="section-headline">Four principles, every project.</h2>
           </header>
 
-          <div className="pillars-grid">
+          <div className="pillars-grid" data-stagger>
             {PILLARS.map((p) => (
               <article key={p.title} className="pillar-card">
                 <h3 className="pillar-title">{p.title}</h3>

@@ -123,7 +123,7 @@ export default function ServicesPage() {
             </p>
           </header>
 
-          <div className="pillars-grid">
+          <div className="pillars-grid" data-stagger>
             {EXTRAS.map((e) => (
               <article key={e.title} className="pillar-card">
                 <h3 className="pillar-title">{e.title}</h3>
