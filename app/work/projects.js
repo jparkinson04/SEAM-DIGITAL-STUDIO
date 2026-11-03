@@ -4,48 +4,6 @@
 
 export const PROJECTS = [
   {
-    slug: 'bohemia-wellness',
-    name: 'Bohemia Wellness',
-    tag: 'RECENT BUILD',
-    title: 'A wellness studio, fully set up online.',
-    teaser:
-      'A custom site for a wellness sanctuary 25 years in the making, designed and written around its clients.',
-    scope: 'Website, branding + ongoing care',
-    badge: 'PREVIEW · LIVE SOON',
-    image: '/bohemia-website.jpg',
-    imageAlt: 'Bohemia Wellness website hero screenshot',
-    detail: [
-      'Bohemia is a wellness sanctuary, 25 years in the making. Its website needed to feel just as warm and considered as the studio itself.',
-      'The site was designed and written around its clients, with the look and the words shaped to match the warmth of the studio. Online bookings, Google reviews and ongoing content support sit on top of the core build.',
-      'The site is in its final stages and will be linked here as soon as it goes live.',
-    ],
-    role: [
-      { title: 'Branding' },
-      { title: 'UX and UI design' },
-      { title: 'Website design and build' },
-      { title: 'Website hosting' },
-      { title: 'Booking system implementation' },
-      {
-        title: 'AI chatbot',
-        note: 'An on-site assistant that helps visitors learn more about the business. Wellness is a newer industry for many people, so the chatbot answers questions and helps customers understand the benefits before they book.',
-      },
-    ],
-    gallery: [
-      {
-        src: '/bohemia-booking.jpg',
-        alt: 'Bohemia Wellness booking page with upcoming sessions and the AI assistant open',
-      },
-      {
-        src: '/bohemia-testimonials.jpg',
-        alt: 'Bohemia Wellness reviews page showing client testimonials',
-      },
-      {
-        src: '/bohemia-instagram.jpg',
-        alt: 'Bohemia Wellness Instagram feed embedded on the site',
-      },
-    ],
-  },
-  {
     slug: 'jbe-interiors',
     name: 'JBE Interiors',
     tag: 'REDESIGN',
@@ -108,6 +66,77 @@ export const PROJECTS = [
       {
         src: '/teachecho-pricing.jpg',
         alt: 'TeachEcho pricing page with simple per-school pricing',
+      },
+    ],
+  },
+  {
+    slug: 'expert-voice',
+    name: 'Expert Voice',
+    tag: 'BRAND + BUILD',
+    title: 'A LinkedIn content service, built from the ground up.',
+    teaser:
+      'Brand, site and messaging for a LinkedIn content service for founders and consultants, with a clear next step for every visitor.',
+    scope: 'Website, branding + messaging',
+    liveUrl: 'https://expert-voice.co.uk/',
+    image: '/expert-voice-website.jpg',
+    imageAlt: 'Expert Voice website hero reading put a face in front of the logo',
+    detail: [
+      'Expert Voice is a LinkedIn content service for founders, consultants and teams, based in Doncaster. It turns a person\'s expertise into months of posts, so the people who buy from them already know and trust them by the time they need help.',
+      'We created the brand and built the site from scratch. A bold, direct headline, a four-colour signature that runs through every page, and copy written in the first person so the founder is the face of the business, not the logo. A free content engine quiz, a guides library, a newsletter signup and a 15-minute intro call give visitors a clear next step at every level of commitment.',
+    ],
+    role: [
+      { title: 'Branding' },
+      { title: 'UX and UI design' },
+      { title: 'Website design and build' },
+      { title: 'Messaging and copy' },
+      {
+        title: 'Content engine quiz',
+        note: 'A free, twelve-question quiz built into the site. Visitors find out which of four content engines suits them and leave with three posts to write that week, no email required.',
+      },
+      { title: 'Booking and newsletter setup' },
+    ],
+    gallery: [
+      {
+        src: '/expert-voice-how-it-works.jpg',
+        alt: 'Expert Voice how it works page showing a month at a glance timeline',
+      },
+      {
+        src: '/expert-voice-quiz.jpg',
+        alt: 'Expert Voice content engine quiz landing page',
+      },
+    ],
+  },
+  {
+    slug: 'emily-hipkiss-counselling',
+    name: 'Emily Hipkiss Counselling & Therapy',
+    tag: 'NEW BUILD',
+    title: 'A counselling practice, made to feel safe before the first session.',
+    teaser:
+      'Brand and site for an integrative counselling practice, with a calm, natural look and a contact flow that feels gentle, not clinical.',
+    scope: 'Website, branding + messaging',
+    liveUrl: 'https://www.emilyhipkiss.com/',
+    image: '/emily-hipkiss-website.jpg',
+    imageAlt: 'Emily Hipkiss Counselling & Therapy website hero with the EH monogram over soft green hills',
+    detail: [
+      'Emily Hipkiss Counselling & Therapy is an integrative counselling and psychotherapy practice, BACP registered, with a particular focus on neurodivergent clients and outdoor Walk & Talk sessions.',
+      'We created the brand and built the site from scratch. A soft, natural palette and a serif monogram set a calm tone from the first screen, and the copy is written to meet people where they are, with no pressure to have everything figured out. A dedicated Walk & Talk page, a blog and a simple contact form make the first step, a free 20-minute consultation, feel easy to take.',
+    ],
+    role: [
+      { title: 'Branding' },
+      { title: 'UX and UI design' },
+      { title: 'Website design and build' },
+      { title: 'Website hosting' },
+      { title: 'Messaging and copy' },
+      { title: 'Contact form setup' },
+    ],
+    gallery: [
+      {
+        src: '/emily-hipkiss-walk-and-talk.jpg',
+        alt: 'Emily Hipkiss Counselling & Therapy Walk & Talk page explaining outdoor therapy',
+      },
+      {
+        src: '/emily-hipkiss-contact.jpg',
+        alt: 'Emily Hipkiss Counselling & Therapy contact page with a send a message form',
       },
     ],
   },

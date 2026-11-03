@@ -88,17 +88,25 @@ export default async function ProjectPage({ params }) {
           <RevealOnScroll className="container">
             <div className="project-gallery">
               <p className="section-label">A CLOSER LOOK</p>
-              {project.gallery.map((shot) => (
-                <div key={shot.src} className="project-gallery-item" role="img" aria-label={shot.alt}>
-                  <Image
-                    src={shot.src}
-                    alt=""
-                    fill
-                    sizes="(max-width: 1000px) 100vw, 1200px"
-                    style={{ objectFit: 'cover' }}
-                  />
-                </div>
-              ))}
+              <div className="project-gallery-grid">
+                {project.gallery.map((shot, i) => (
+                  <figure key={shot.src} className="project-gallery-figure">
+                    <div className="project-gallery-item">
+                      <Image
+                        src={shot.src}
+                        alt=""
+                        fill
+                        sizes="(max-width: 1000px) 100vw, 660px"
+                        style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                      />
+                    </div>
+                    <figcaption className="project-gallery-caption">
+                      <span>{String(i + 1).padStart(2, '0')}</span>
+                      {shot.caption ?? shot.alt}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
             </div>
           </RevealOnScroll>
         )}
